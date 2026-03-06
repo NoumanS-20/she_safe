@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:geolocator/geolocator.dart';
 import '../models/cell_tower.dart';
 import '../models/triangulation_result.dart';
 import '../services/cell_tower_service.dart';
 import '../services/triangulation_service.dart';
+import '../services/location_service.dart';
 import '../widgets/tower_info_card.dart';
 import '../widgets/triangulation_painter.dart';
 
@@ -20,13 +22,15 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final CellTowerService _cellTowerService = CellTowerService();
   final TriangulationService _triangulationService = TriangulationService();
+  final LocationService _locationService = LocationService();
   final MapController _mapController = MapController();
 
   List<CellTower> _towers = [];
   TriangulationResult? _triangulationResult;
+  final bool _useGPS = true;
   bool _isLoading = false;
   bool _showMap = true;
-  String _statusMessage = 'Tap "Scan" to find your location using cell towers';
+  String _statusMessage = 'Tap "Scan" to find your location';
 
   late AnimationController _pulseController;
   late AnimationController _scanController;
@@ -70,7 +74,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Future<void> _requestPermissions() async {
     await [
       Permission.phone,
+      Permission.location,
+      Permission.locationWhenInUse,
     ].request();
+    // Also request GPS permission via geolocator
+    await _locationService.requestPermissions();
   }
 
   Future<void> _scanTowers() async {
@@ -78,16 +86,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     setState(() {
       _isLoading = true;
-      _statusMessage = 'Scanning for cell towers...';
+      _statusMessage = 'Finding your location...';
     });
 
     _scanController.forward(from: 0);
 
     try {
-      // Get cell towers (no GPS — positions from cell tower database)
-      final towers = await _cellTowerService.getCellTowers();
+      // Try GPS first for accuracy
+      Position? gpsPos;
+      if (_useGPS) {
+        gpsPos = await _locationService.getCurrentPosition();
 
-      // Perform triangulation
+      }
+
+      // Also get cell towers for visualization
+      final towers = await _cellTowerService.getCellTowers();
       final result = _triangulationService.triangulate(towers);
 
       setState(() {
@@ -95,21 +108,37 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         _triangulationResult = result;
         _isLoading = false;
 
-        if (result != null) {
+        if (gpsPos != null) {
+          // Override triangulation result with GPS for accuracy
+          _triangulationResult = TriangulationResult(
+            latitude: gpsPos.latitude,
+            longitude: gpsPos.longitude,
+            accuracyMeters: gpsPos.accuracy,
+            towerCount: towers.length,
+            method: 'gps',
+          );
           _statusMessage =
-              'Your location found using ${towers.length} towers';
+              'GPS location found (±${gpsPos.accuracy.round()}m)';
+          if (towers.isNotEmpty) {
+            _statusMessage += '\n${towers.length} cell towers also detected';
+          }
+        } else if (result != null) {
+          _statusMessage =
+              'Location estimated using ${towers.length} towers';
           _statusMessage +=
               '\n${result.method.replaceAll('_', ' ').toUpperCase()} • Accuracy: ±${result.accuracyMeters.round()}m';
         } else {
-          _statusMessage = 'Found ${towers.length} towers but could not determine your location';
+          _statusMessage =
+              'Found ${towers.length} towers but could not determine your location';
         }
       });
 
-      // Pan map to the triangulated position
-      if (result != null) {
+      // Pan map to the best available position
+      final bestResult = _triangulationResult;
+      if (bestResult != null) {
         _mapController.move(
-          LatLng(result.latitude, result.longitude),
-          14.0,
+          LatLng(bestResult.latitude, bestResult.longitude),
+          15.0,
         );
       }
 
@@ -252,7 +281,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ),
                 Text(
-                  'GPS-free location via cell towers',
+                  _useGPS
+                      ? 'GPS + Cell Tower Location'
+                      : 'Cell Tower Triangulation',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),
