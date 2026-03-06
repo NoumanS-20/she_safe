@@ -20,6 +20,12 @@ dependencies:
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
   http: ^1.2.2
+  geolocator: ^13.0.2
+  telephony: ^0.2.0
+  audioplayers: ^6.1.0
+  shake_detector: ^2.2.0
+  vibration: ^2.0.0
+  flutter_ringtone_player: ^4.0.0+3
 
 dev_dependencies:
   flutter_test:
