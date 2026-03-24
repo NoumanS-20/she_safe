@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:geolocator/geolocator.dart';
 import '../models/cell_tower.dart';
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final bool _useGPS = true;
   bool _isLoading = false;
   bool _showMap = true;
+  bool _mapNetworkAvailable = true;
   String _statusMessage = 'Tap "Scan" to find your location';
 
   late AnimationController _pulseController;
@@ -61,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
 
     _requestPermissions();
+    _checkMapNetwork();
   }
 
   @override
@@ -79,6 +82,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     ].request();
     // Also request GPS permission via geolocator
     await _locationService.requestPermissions();
+  }
+
+  Future<void> _checkMapNetwork() async {
+    final connectivityResults = await Connectivity().checkConnectivity();
+    final hasNetwork =
+      connectivityResults.any((c) => c != ConnectivityResult.none);
+
+    if (!mounted) return;
+    setState(() {
+      _mapNetworkAvailable = hasNetwork;
+    });
   }
 
   Future<void> _scanTowers() async {
@@ -102,6 +116,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       // Also get cell towers for visualization
       final towers = await _cellTowerService.getCellTowers();
       final result = _triangulationService.triangulate(towers);
+      await _checkMapNetwork();
 
       setState(() {
         _towers = towers;
@@ -180,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final screenHeight = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
       body: SafeArea(
@@ -191,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Expanded(
               child: _showMap ? _buildMapView() : _buildVisualizationView(),
             ),
-            _buildTowerList(theme),
+            _buildTowerList(theme, screenHeight),
           ],
         ),
       ),
@@ -456,6 +472,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ? Colors.green.shade800
                     : Colors.grey.shade700,
               ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           if (_triangulationResult != null)
@@ -482,6 +500,57 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Widget _buildMapView() {
+    if (!_mapNetworkAvailable) {
+      return Container(
+        margin: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade300),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.wifi_off_rounded,
+                  size: 40,
+                  color: Colors.grey.shade600,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Map needs internet access',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.grey.shade800,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Connect your phone to Wi-Fi or mobile data, then tap Retry.',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.grey.shade700,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+                FilledButton.icon(
+                  onPressed: _checkMapNetwork,
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
     final center = _triangulationResult != null
         ? LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude)
         : const LatLng(12.9716, 77.5946); // Default: Bangalore
@@ -499,8 +568,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
         children: [
           TileLayer(
-            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            userAgentPackageName: 'com.example.she_safe',
+            // Alternate tile host helps when a network blocks the default OSM domain.
+            options: TileLayerOptions(
+              urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+              subdomains: const ['a', 'b', 'c', 'd'],
+              userAgentPackageName: 'com.example.she_safe',
+            ),
           ),
           // Signal radius circles
           CircleLayer(
@@ -737,8 +810,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildTowerList(ThemeData theme) {
+  Widget _buildTowerList(ThemeData theme, double screenHeight) {
     if (_towers.isEmpty) return const SizedBox.shrink();
+
+    final listHeight = screenHeight < 700 ? 92.0 : 120.0;
+    final bottomSpacing = screenHeight < 700 ? 0.0 : 8.0;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -783,7 +859,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
         ),
         SizedBox(
-          height: 120,
+          height: listHeight,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -812,7 +888,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             },
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: bottomSpacing),
       ],
     );
   }

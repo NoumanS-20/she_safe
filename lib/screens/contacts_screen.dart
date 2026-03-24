@@ -85,7 +85,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                     ),
                     const SizedBox(height: 14),
                     DropdownButtonFormField<String>(
-                      value: relationship,
+                      initialValue: relationship,
                       decoration: InputDecoration(
                         labelText: 'Relationship',
                         prefixIcon: const Icon(Icons.people),
