@@ -568,12 +568,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
         children: [
           TileLayer(
-            // Alternate tile host helps when a network blocks the default OSM domain.
-            options: TileLayerOptions(
-              urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-              subdomains: const ['a', 'b', 'c', 'd'],
-              userAgentPackageName: 'com.example.she_safe',
-            ),
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            userAgentPackageName: 'com.example.she_safe',
           ),
           // Signal radius circles
           CircleLayer(
