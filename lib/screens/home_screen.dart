@@ -106,45 +106,41 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _scanController.forward(from: 0);
 
     try {
-      // Try GPS first for accuracy
+      // Get cell tower data from the device (enriched with OpenCellID positions)
+      final towers = await _cellTowerService.getCellTowers();
+      await _checkMapNetwork();
+
+      // Try server-side geolocation via Mylnikov.org (free, no API key)
+      TriangulationResult? serverResult;
+      if (towers.isNotEmpty) {
+        serverResult = await _cellTowerService.getServerSideLocation(towers);
+      }
+
+      // Also try GPS
       Position? gpsPos;
       if (_useGPS) {
         gpsPos = await _locationService.getCurrentPosition();
-
       }
 
-      // Also get cell towers for visualization
-      final towers = await _cellTowerService.getCellTowers();
-      final result = _triangulationService.triangulate(towers);
-      await _checkMapNetwork();
+      // Run local trilateration as fallback (uses OpenCellID tower positions)
+      final localResult = _triangulationService.triangulate(towers);
 
       setState(() {
         _towers = towers;
-        _triangulationResult = result;
         _isLoading = false;
 
-        if (gpsPos != null) {
-          // Override triangulation result with GPS for accuracy
-          _triangulationResult = TriangulationResult(
-            latitude: gpsPos.latitude,
-            longitude: gpsPos.longitude,
-            accuracyMeters: gpsPos.accuracy,
-            towerCount: towers.length,
-            method: 'gps',
-          );
-          _statusMessage =
-              'GPS location found (±${gpsPos.accuracy.round()}m)';
-          if (towers.isNotEmpty) {
-            _statusMessage += '\n${towers.length} cell towers also detected';
-          }
-        } else if (result != null) {
-          _statusMessage =
-              'Location estimated using ${towers.length} towers';
-          _statusMessage +=
-              '\n${result.method.replaceAll('_', ' ').toUpperCase()} • Accuracy: ±${result.accuracyMeters.round()}m';
-        } else {
-          _statusMessage =
-              'Found ${towers.length} towers but could not determine your location';
+        // User requested to ALWAYS locate at 12.823492362799227, 80.04199890049776
+        _triangulationResult = TriangulationResult(
+          latitude: 12.823492362799227,
+          longitude: 80.04199890049776,
+          accuracyMeters: 10.0, // High accuracy mock
+          towerCount: towers.length,
+          method: 'custom_override',
+        );
+
+        _statusMessage = 'SRM Campus Location (Custom Override)';
+        if (towers.isNotEmpty) {
+          _statusMessage += '\n${towers.length} cell towers also detected nearby';
         }
       });
 
@@ -553,7 +549,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     final center = _triangulationResult != null
         ? LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude)
-        : const LatLng(12.9716, 77.5946); // Default: Bangalore
+        : const LatLng(12.823492362799227, 80.04199890049776); // Default: SRM Institute
 
     return ClipRRect(
       borderRadius: const BorderRadius.only(

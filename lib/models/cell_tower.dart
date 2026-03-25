@@ -41,24 +41,61 @@ class CellTower {
     );
   }
 
-  /// Estimates distance from signal strength using the Log-Distance Path Loss Model.
-  /// RSSI = TxPower - 10 * n * log10(d / d0) + noise
-  /// Where n = path loss exponent (2-4 for urban), d0 = reference distance (1m)
+  /// Estimates distance from signal strength using the Log-Distance Path Loss Model
+  /// with network-type-specific parameters.
+  ///
+  /// Uses a reference-distance model: d = d0 * 10^((P0 - RSSI) / (10 * n))
+  /// where d0 = reference distance, P0 = expected RSSI at d0, n = path loss exponent.
   double estimateDistance() {
     if (estimatedDistance != null) return estimatedDistance!;
 
-    // Reference power at 1 meter (typical for cell towers)
-    const double txPower = -30.0; // dBm at 1 meter reference
-    // Path loss exponent (2 = free space, 2.7-3.5 urban, 4-6 indoor)
-    const double pathLossExponent = 3.0;
+    // Network-type-specific propagation parameters
+    // d0 = reference distance (meters), P0 = expected RSSI at d0 (dBm),
+    // n = path loss exponent (urban environment)
+    double referenceRSSI;
+    double referenceDistance;
+    double pathLossExponent;
 
-    double distance = pow(
+    switch (networkType) {
+      case 'LTE':
+        referenceRSSI = -45.0;    // dBm expected at ~100m from LTE tower
+        referenceDistance = 100.0; // meters
+        pathLossExponent = 3.5;   // urban LTE propagation
+        break;
+      case 'GSM':
+        referenceRSSI = -50.0;
+        referenceDistance = 100.0;
+        pathLossExponent = 3.2;
+        break;
+      case 'WCDMA':
+        referenceRSSI = -48.0;
+        referenceDistance = 100.0;
+        pathLossExponent = 3.4;
+        break;
+      case 'NR':
+        referenceRSSI = -44.0;
+        referenceDistance = 50.0;
+        pathLossExponent = 3.8;   // 5G higher frequency = faster attenuation
+        break;
+      case 'CDMA':
+        referenceRSSI = -50.0;
+        referenceDistance = 100.0;
+        pathLossExponent = 3.3;
+        break;
+      default:
+        referenceRSSI = -50.0;
+        referenceDistance = 100.0;
+        pathLossExponent = 3.5;
+    }
+
+    // Log-distance path loss model: d = d0 * 10^((P0 - RSSI) / (10 * n))
+    double distance = referenceDistance * pow(
       10.0,
-      (txPower - signalStrength) / (10.0 * pathLossExponent),
+      (referenceRSSI - signalStrength) / (10.0 * pathLossExponent),
     ).toDouble();
 
-    // Clamp to reasonable range (50m - 35km)
-    return distance.clamp(50.0, 35000.0);
+    // Clamp to reasonable cell tower range (100m - 35km)
+    return distance.clamp(100.0, 35000.0);
   }
 
   /// Returns a copy with location data.
