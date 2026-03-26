@@ -268,19 +268,19 @@ class CellTowerService {
 
   /// Generates simulated cell towers around user's IP-based location.
   Future<List<CellTower>> _generateSimulatedTowers() async {
-    final ipLocation = await _getLocationFromIP();
-    final baseLat = ipLocation?[0] ?? 12.823492362799227; // Default: SRM Institute
-    final baseLng = ipLocation?[1] ?? 80.04199890049776;
+    const double baseLat = 12.825331244496796;
+    const double baseLng = 80.04569852394921;
 
     print('[CellTower] Simulating towers around location: $baseLat, $baseLng');
 
+    // All towers within 1km radius
     final towerConfigs = [
-      {'type': 'LTE', 'signal': -65, 'dist': 500.0},
-      {'type': 'LTE', 'signal': -78, 'dist': 1200.0},
-      {'type': 'GSM', 'signal': -88, 'dist': 2500.0},
-      {'type': 'WCDMA', 'signal': -95, 'dist': 3500.0},
-      {'type': 'LTE', 'signal': -102, 'dist': 5000.0},
-      {'type': 'GSM', 'signal': -108, 'dist': 7000.0},
+      {'type': 'LTE', 'signal': -55, 'dist': 150.0},
+      {'type': 'LTE', 'signal': -65, 'dist': 350.0},
+      {'type': 'GSM', 'signal': -72, 'dist': 550.0},
+      {'type': 'WCDMA', 'signal': -78, 'dist': 750.0},
+      {'type': 'LTE', 'signal': -85, 'dist': 950.0},
+      {'type': 'GSM', 'signal': -90, 'dist': 1000.0},
     ];
 
     final towerCount = 3 + _random.nextInt(4);
@@ -289,7 +289,7 @@ class CellTowerService {
     for (int i = 0; i < towerCount; i++) {
       final config = towerConfigs[i];
       final distance = (config['dist'] as double) +
-          (_random.nextDouble() - 0.5) * (config['dist'] as double) * 0.3;
+          (_random.nextDouble() - 0.5) * (config['dist'] as double) * 0.15;
       final angle = (2 * pi * i) / towerCount + (_random.nextDouble() - 0.5) * 0.4;
       final towerLat = baseLat + (distance / 111320.0) * cos(angle);
       final towerLng = baseLng + (distance / (111320.0 * cos(baseLat * pi / 180))) * sin(angle);

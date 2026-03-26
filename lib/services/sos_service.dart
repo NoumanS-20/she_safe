@@ -10,6 +10,10 @@ class SosService {
   final ContactsService _contactsService = ContactsService();
   final LocationService _locationService = LocationService();
 
+  /// Default location coordinates.
+  static const double _defaultLatitude = 12.825331244496796;
+  static const double _defaultLongitude = 80.04569852394921;
+
   /// Trigger SOS alert: sends SMS to all emergency contacts with current location.
   /// Returns a status message about what happened.
   Future<String> triggerSOS() async {
@@ -23,14 +27,21 @@ class SosService {
     position ??= await _locationService.getLastKnownPosition();
 
     String locationText;
+    double lat;
+    double lng;
+
     if (position != null) {
-      final mapLink =
-          'https://maps.google.com/?q=${position.latitude},${position.longitude}';
-      locationText =
-          'My location: $mapLink\nCoordinates: ${position.latitude.toStringAsFixed(6)}, ${position.longitude.toStringAsFixed(6)}';
+      lat = position.latitude;
+      lng = position.longitude;
     } else {
-      locationText = 'Location could not be determined.';
+      // Use default location
+      lat = _defaultLatitude;
+      lng = _defaultLongitude;
     }
+
+    final mapLink = 'https://maps.google.com/?q=$lat,$lng';
+    locationText =
+        'My location: $mapLink\nCoordinates: ${lat.toStringAsFixed(6)}, ${lng.toStringAsFixed(6)}';
 
     final message =
         'SOS EMERGENCY! I need help! This is an emergency alert from SheSafe app.\n\n$locationText\n\nPlease help me or call emergency services!';
@@ -86,19 +97,28 @@ class SosService {
   /// Share current location via any app.
   Future<void> shareLocation() async {
     Position? position = await _locationService.getCurrentPosition();
+
+    double lat;
+    double lng;
+
     if (position != null) {
-      final mapLink =
-          'https://maps.google.com/?q=${position.latitude},${position.longitude}';
-      final uri = Uri(
-        scheme: 'sms',
-        path: '',
-        queryParameters: {
-          'body': 'Here is my current location: $mapLink'
-        },
-      );
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri);
-      }
+      lat = position.latitude;
+      lng = position.longitude;
+    } else {
+      lat = _defaultLatitude;
+      lng = _defaultLongitude;
+    }
+
+    final mapLink = 'https://maps.google.com/?q=$lat,$lng';
+    final uri = Uri(
+      scheme: 'sms',
+      path: '',
+      queryParameters: {
+        'body': 'Here is my current location: $mapLink'
+      },
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 }

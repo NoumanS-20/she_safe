@@ -125,30 +125,34 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       // Run local trilateration as fallback (uses OpenCellID tower positions)
       final localResult = _triangulationService.triangulate(towers);
 
+      // Use the best available result: server-side > local triangulation > custom override
+      TriangulationResult? bestResult = serverResult ?? localResult;
+
       setState(() {
         _towers = towers;
         _isLoading = false;
 
-        // User requested to ALWAYS locate at 12.823492362799227, 80.04199890049776
-        _triangulationResult = TriangulationResult(
-          latitude: 12.823492362799227,
-          longitude: 80.04199890049776,
-          accuracyMeters: 10.0, // High accuracy mock
+        // Use actual triangulation result if available, otherwise custom override
+        _triangulationResult = bestResult ?? TriangulationResult(
+          latitude: 12.825331244496796,
+          longitude: 80.04569852394921,
+          accuracyMeters: 100.0,
           towerCount: towers.length,
-          method: 'custom_override',
+          method: 'default_location',
         );
 
-        _statusMessage = 'SRM Campus Location (Custom Override)';
-        if (towers.isNotEmpty) {
-          _statusMessage += '\n${towers.length} cell towers also detected nearby';
+        _statusMessage = bestResult != null
+            ? 'Location estimated from ${bestResult.towerCount} towers'
+            : 'Default Location';
+        if (towers.isNotEmpty && bestResult == null) {
+          _statusMessage += '\n${towers.length} cell towers detected nearby';
         }
       });
 
-      // Pan map to the best available position
-      final bestResult = _triangulationResult;
-      if (bestResult != null) {
+      // Pan map to the estimated position
+      if (_triangulationResult != null) {
         _mapController.move(
-          LatLng(bestResult.latitude, bestResult.longitude),
+          LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude),
           15.0,
         );
       }
@@ -549,7 +553,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     final center = _triangulationResult != null
         ? LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude)
-        : const LatLng(12.823492362799227, 80.04199890049776); // Default: SRM Institute
+        : const LatLng(12.825331244496796, 80.04569852394921);
 
     return ClipRRect(
       borderRadius: const BorderRadius.only(
