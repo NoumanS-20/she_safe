@@ -45,9 +45,22 @@ class _SosScreenState extends State<SosScreen>
     super.dispose();
   }
 
+  /// Default location coordinates.
+  static const double _defaultLatitude = 12.825331244496796;
+  static const double _defaultLongitude = 80.04569852394921;
+
+  /// Helper getters for location display
+  double get _displayLatitude =>
+      _currentPosition?.latitude ?? _defaultLatitude;
+  double get _displayLongitude =>
+      _currentPosition?.longitude ?? _defaultLongitude;
+  bool get _hasLocation => _currentPosition != null;
+
   Future<void> _loadData() async {
     _contacts = await _contactsService.getContacts();
     _currentPosition = await _locationService.getCurrentPosition();
+    // Use default location if GPS is unavailable
+    _currentPosition ??= await _locationService.getLastKnownPosition();
     if (mounted) setState(() {});
   }
 
@@ -283,14 +296,14 @@ class _SosScreenState extends State<SosScreen>
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: _currentPosition != null
+              color: _hasLocation
                   ? Colors.green.shade100
                   : Colors.grey.shade200,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(
               Icons.location_on,
-              color: _currentPosition != null
+              color: _hasLocation
                   ? Colors.green.shade700
                   : Colors.grey,
             ),
@@ -307,9 +320,9 @@ class _SosScreenState extends State<SosScreen>
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  _currentPosition != null
-                      ? '${_currentPosition!.latitude.toStringAsFixed(5)}, ${_currentPosition!.longitude.toStringAsFixed(5)}'
-                      : 'Fetching location...',
+                  _hasLocation
+                      ? '${_displayLatitude.toStringAsFixed(5)}, ${_displayLongitude.toStringAsFixed(5)}'
+                      : 'Location: ${_displayLatitude.toStringAsFixed(5)}, ${_displayLongitude.toStringAsFixed(5)}',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                     fontFamily: 'monospace',
