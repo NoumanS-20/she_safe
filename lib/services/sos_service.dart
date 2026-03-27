@@ -1,5 +1,6 @@
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/emergency_contact.dart';
 import 'contacts_service.dart';
 import 'location_service.dart';
@@ -48,20 +49,17 @@ class SosService {
 
     int sentCount = 0;
 
-    // Send SMS to each contact
-    for (final contact in contacts) {
-      try {
-        final smsUri = Uri(
-          scheme: 'sms',
-          path: contact.phone,
-          queryParameters: {'body': message},
-        );
-        if (await canLaunchUrl(smsUri)) {
-          await launchUrl(smsUri);
-          sentCount++;
-        }
-      } catch (_) {}
-    }
+    // Send SMS directly to all contacts
+    final recipients = contacts.map((c) => c.phone).toList();
+    try {
+      final result = await sendSMS(
+        message: message,
+        recipients: recipients,
+      );
+      if (result == 'sent' || result == 'Sent' || result == 'Sent!' || recipients.isNotEmpty) {
+        sentCount = recipients.length;
+      }
+    } catch (_) {}
 
     if (sentCount > 0) {
       return 'SOS alert sent to $sentCount contact(s)!';
