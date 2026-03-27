@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/emergency_contact.dart';
 import '../services/contacts_service.dart';
 import '../services/sos_service.dart';
+import 'import_contacts_screen.dart';
 
 class ContactsScreen extends StatefulWidget {
   const ContactsScreen({super.key});
@@ -194,8 +195,63 @@ class _ContactsScreenState extends State<ContactsScreen> {
               ? _buildEmptyState(theme)
               : _buildContactsList(theme),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _showAddEditDialog(),
-        icon: const Icon(Icons.person_add),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder: (context) => SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 4,
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.deepPurple.shade100,
+                        child: Icon(Icons.person_add, color: Colors.deepPurple.shade700),
+                      ),
+                      title: const Text('Add Manually'),
+                      subtitle: const Text('Enter contact details manually'),
+                      onTap: () {
+                        Navigator.pop(context);
+                        _showAddEditDialog();
+                      },
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.blue.shade100,
+                        child: Icon(Icons.contacts, color: Colors.blue.shade700),
+                      ),
+                      title: const Text('Import from Phone'),
+                      subtitle: const Text('Choose from your contacts'),
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ImportContactsScreen(),
+                          ),
+                        ).then((_) => _loadContacts());
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+        icon: const Icon(Icons.add),
         label: const Text('Add Contact'),
       ),
     );
@@ -234,6 +290,67 @@ class _ContactsScreenState extends State<ContactsScreen> {
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: Colors.grey.shade600,
               ),
+            ),
+            const SizedBox(height: 24),
+            FilledButton.icon(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                  ),
+                  builder: (context) => SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 40,
+                            height: 4,
+                            margin: const EdgeInsets.only(bottom: 16),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                          ),
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.deepPurple.shade100,
+                              child: Icon(Icons.person_add, color: Colors.deepPurple.shade700),
+                            ),
+                            title: const Text('Add Manually'),
+                            subtitle: const Text('Enter contact details manually'),
+                            onTap: () {
+                              Navigator.pop(context);
+                              _showAddEditDialog();
+                            },
+                          ),
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.blue.shade100,
+                              child: Icon(Icons.contacts, color: Colors.blue.shade700),
+                            ),
+                            title: const Text('Import from Phone'),
+                            subtitle: const Text('Choose from your contacts'),
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ImportContactsScreen(),
+                                ),
+                              ).then((_) => _loadContacts());
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.add),
+              label: const Text('Add Contact'),
             ),
           ],
         ),
