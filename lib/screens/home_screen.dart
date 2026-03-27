@@ -274,15 +274,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            width: 44,
+            height: 44,
             decoration: BoxDecoration(
               color: theme.colorScheme.primaryContainer,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(
-              Icons.shield,
-              color: theme.colorScheme.primary,
-              size: 28,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'assets/Gemini_Generated_Image_vtoy16vtoy16vtoy.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(width: 12),
