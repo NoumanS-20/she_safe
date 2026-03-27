@@ -4,12 +4,13 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:geolocator/geolocator.dart';
 import '../models/cell_tower.dart';
 import '../models/triangulation_result.dart';
+import '../models/zone_data.dart';
 import '../services/cell_tower_service.dart';
 import '../services/triangulation_service.dart';
 import '../services/location_service.dart';
+import '../services/zone_service.dart';
 import '../widgets/tower_info_card.dart';
 import '../widgets/triangulation_painter.dart';
 
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final CellTowerService _cellTowerService = CellTowerService();
   final TriangulationService _triangulationService = TriangulationService();
   final LocationService _locationService = LocationService();
+  final ZoneService _zoneService = ZoneService();
   final MapController _mapController = MapController();
 
   List<CellTower> _towers = [];
@@ -32,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _isLoading = false;
   bool _showMap = true;
   bool _mapNetworkAvailable = true;
+  bool _showZones = true;
   String _statusMessage = 'Tap "Scan" to find your location';
+  StateZone? _currentZone;
 
   late AnimationController _pulseController;
   late AnimationController _scanController;
@@ -64,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     _requestPermissions();
     _checkMapNetwork();
+    _loadZoneData();
   }
 
   @override
@@ -95,6 +100,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     });
   }
 
+  Future<void> _loadZoneData() async {
+    await _zoneService.loadZoneData();
+    if (mounted && _zoneService.zoneData != null) {
+      setState(() {});
+    }
+  }
+
   Future<void> _scanTowers() async {
     if (_isLoading) return;
 
@@ -117,9 +129,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       }
 
       // Also try GPS
-      Position? gpsPos;
       if (_useGPS) {
-        gpsPos = await _locationService.getCurrentPosition();
+        await _locationService.getCurrentPosition();
       }
 
       // Run local trilateration as fallback (uses OpenCellID tower positions)
@@ -141,11 +152,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           method: 'default_location',
         );
 
+        _currentZone = _zoneService.getZoneForLocation(
+          _triangulationResult!.latitude,
+          _triangulationResult!.longitude,
+        );
+
         _statusMessage = bestResult != null
             ? 'Location estimated from ${bestResult.towerCount} towers'
             : 'Default Location';
         if (towers.isNotEmpty && bestResult == null) {
           _statusMessage += '\n${towers.length} cell towers detected nearby';
+        }
+        if (_currentZone != null) {
+          _statusMessage +=
+              '\nZone: ${_currentZone!.zone} — ${_currentZone!.name}';
         }
       });
 
@@ -331,6 +351,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
           ),
+          const SizedBox(width: 8),
+          // Toggle zones layer
+          IconButton(
+            onPressed: () => setState(() => _showZones = !_showZones),
+            icon: Icon(
+              _showZones ? Icons.layers : Icons.layers_outlined,
+              size: 20,
+            ),
+            tooltip: _showZones ? 'Hide crime zones' : 'Show crime zones',
+            style: IconButton.styleFrom(
+              backgroundColor: _showZones
+                  ? Colors.red.shade100
+                  : theme.colorScheme.surfaceContainerHighest,
+              foregroundColor: _showZones ? Colors.red : Colors.grey,
+            ),
+          ),
         ],
       ),
     );
@@ -432,6 +468,28 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ),
               ),
             ),
+            if (_currentZone != null) ...[
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: _currentZone!.zone == 'RED'
+                      ? Colors.red.shade600
+                      : _currentZone!.zone == 'YELLOW'
+                          ? Colors.amber.shade600
+                          : Colors.green.shade600,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  _currentZone!.zone,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 11,
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
       ),
@@ -578,6 +636,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           CircleLayer(
             circles: _buildMapCircles(),
           ),
+          // Crime zone overlay circles
+          if (_showZones && _zoneService.zoneData != null)
+            CircleLayer(
+              circles: _buildZoneCircles(),
+            ),
+          // Crime zone labels
+          if (_showZones && _zoneService.zoneData != null)
+            MarkerLayer(
+              markers: _buildZoneMarkers(),
+            ),
           // Lines from towers to estimated position
           PolylineLayer(
             polylines: _buildMapLines(),
@@ -624,6 +692,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
 
     return circles;
+  }
+
+  List<CircleMarker> _buildZoneCircles() {
+    final zoneColorMap = {
+      'RED': Colors.red,
+      'YELLOW': Colors.amber,
+      'GREEN': Colors.green,
+    };
+
+    return _zoneService.zoneData!.states.map((state) {
+      final color = zoneColorMap[state.zone] ?? Colors.grey;
+      return CircleMarker(
+        point: LatLng(state.latitude, state.longitude),
+        radius: 60000, // ~60km radius circles
+        useRadiusInMeter: true,
+        color: color.withValues(alpha: 0.12),
+        borderColor: color.withValues(alpha: 0.5),
+        borderStrokeWidth: 1.5,
+      );
+    }).toList();
   }
 
   List<Polyline> _buildMapLines() {
@@ -754,6 +842,152 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
 
     return markers;
+  }
+
+  List<Marker> _buildZoneMarkers() {
+    final zoneColorMap = {
+      'RED': Colors.red.shade700,
+      'YELLOW': Colors.amber.shade700,
+      'GREEN': Colors.green.shade700,
+    };
+
+    return _zoneService.zoneData!.states.map((state) {
+      final color = zoneColorMap[state.zone] ?? Colors.grey;
+      return Marker(
+        point: LatLng(state.latitude, state.longitude),
+        width: 140,
+        height: 50,
+        child: GestureDetector(
+          onTap: () => _showZoneInfo(state),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(6),
+                  boxShadow: [
+                    BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 4),
+                  ],
+                ),
+                child: Text(
+                  state.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Container(
+                width: 8,
+                height: 8,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color,
+                  border: Border.all(color: Colors.white, width: 1.5),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }).toList();
+  }
+
+  void _showZoneInfo(StateZone state) {
+    final colorMap = {
+      'RED': Colors.red,
+      'YELLOW': Colors.amber,
+      'GREEN': Colors.green,
+    };
+    final color = colorMap[state.zone] ?? Colors.grey;
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) => Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                width: 40, height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    state.zone == 'RED'
+                        ? 'HIGH RISK'
+                        : state.zone == 'YELLOW'
+                            ? 'MODERATE RISK'
+                            : 'LOW RISK',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    state.name,
+                    style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            _zoneInfoRow('Total Crimes', '${state.totalCrime}'),
+            _zoneInfoRow('Districts', '${state.districtCount}'),
+            _zoneInfoRow(
+                'Avg Crime/District', state.avgPerDistrict.toStringAsFixed(1)),
+            const SizedBox(height: 8),
+            Text(
+              'Data: NCRB 2020 — Crime against Women',
+              style: TextStyle(
+                color: Colors.grey.shade600,
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _zoneInfoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: TextStyle(color: Colors.grey.shade600, fontSize: 14)),
+          Text(value, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
+        ],
+      ),
+    );
   }
 
   Widget _buildVisualizationView() {
