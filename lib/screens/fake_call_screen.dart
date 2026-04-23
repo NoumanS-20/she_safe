@@ -292,9 +292,12 @@ class _IncomingCallUIState extends State<_IncomingCallUI>
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(
-        child: Column(
-          children: [
-            const Spacer(flex: 2),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Spacer(flex: 2),
             // Caller info
             AnimatedBuilder(
               animation: _ringController,
@@ -443,6 +446,7 @@ class _IncomingCallUIState extends State<_IncomingCallUI>
               ),
           ],
         ),
+      ),
       ),
     );
   }
