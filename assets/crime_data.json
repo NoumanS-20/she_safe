@@ -1,44 +1,5714 @@
 {
-    "Maharashtra": {
-        "Mumbai": {
-            "crime_rate": 8450,
-            "zone": "red"
+    "A&N Islands": {
+        "Car": {
+            "crime_rate": 5,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
-        "Pune": {
-            "crime_rate": 3210,
-            "zone": "yellow"
+        "North": {
+            "crime_rate": 26,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
-        "Nagpur": {
-            "crime_rate": 4500,
-            "zone": "yellow"
+        "South": {
+            "crime_rate": 71,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
-        "Sindhudurg": {
-            "crime_rate": 450,
-            "zone": "green"
+        "South Andaman": {
+            "crime_rate": 127,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "North & Middle Andaman": {
+            "crime_rate": 66,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nicobar": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Andhra Pradesh": {
+        "Adilabad": {
+            "crime_rate": 919,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Anantapur": {
+            "crime_rate": 1161,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chittoor": {
+            "crime_rate": 755,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cuddapah": {
+            "crime_rate": 766,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cyberabad": {
+            "crime_rate": 2524,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "East Godavari": {
+            "crime_rate": 1784,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Guntakal Rly.": {
+            "crime_rate": 5,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Guntur": {
+            "crime_rate": 1471,
+            "zone": "red",
+            "lat": 16.3067,
+            "lng": 80.4365
+        },
+        "Guntur Urban": {
+            "crime_rate": 1257,
+            "zone": "red",
+            "lat": 16.3067,
+            "lng": 80.4365
+        },
+        "Hyderabad City": {
+            "crime_rate": 1987,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Karimnagar": {
+            "crime_rate": 1499,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khammam": {
+            "crime_rate": 1538,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Krishna": {
+            "crime_rate": 1777,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kurnool": {
+            "crime_rate": 1513,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahaboobnagar": {
+            "crime_rate": 764,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Medak": {
+            "crime_rate": 845,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nalgonda": {
+            "crime_rate": 1221,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nellore": {
+            "crime_rate": 1351,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nizamabad": {
+            "crime_rate": 1268,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Prakasham": {
+            "crime_rate": 975,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajahmundry": {
+            "crime_rate": 564,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ranga Reddy": {
+            "crime_rate": 336,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Secunderabad Rly.": {
+            "crime_rate": 13,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Srikakulam": {
+            "crime_rate": 899,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tirupathi Urban": {
+            "crime_rate": 378,
+            "zone": "yellow",
+            "lat": 13.6288,
+            "lng": 79.4199
+        },
+        "Vijayawada City": {
+            "crime_rate": 2037,
+            "zone": "red",
+            "lat": 16.5062,
+            "lng": 80.648
+        },
+        "Vijayawada Rly.": {
+            "crime_rate": 15,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Visakha Rural": {
+            "crime_rate": 586,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Visakhapatnam": {
+            "crime_rate": 1043,
+            "zone": "red",
+            "lat": 17.6868,
+            "lng": 83.2185
+        },
+        "Vizianagaram": {
+            "crime_rate": 1257,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Warangal": {
+            "crime_rate": 480,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Warangal Urban": {
+            "crime_rate": 502,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "West Godavari": {
+            "crime_rate": 2007,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Guntakal Railway": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vijayawada Railway": {
+            "crime_rate": 25,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Arunachal Pradesh": {
+        "Anjaw": {
+            "crime_rate": 2,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Changlang": {
+            "crime_rate": 18,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dibang Valley": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "K/Kumey": {
+            "crime_rate": 2,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kameng East": {
+            "crime_rate": 20,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kameng West": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lohit": {
+            "crime_rate": 48,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Longding": {
+            "crime_rate": 15,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Papum Pare": {
+            "crime_rate": 85,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rural": {
+            "crime_rate": 14,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siang East": {
+            "crime_rate": 82,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siang Upper": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siang West": {
+            "crime_rate": 54,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Subansiri Lower": {
+            "crime_rate": 18,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Subansiri Upper": {
+            "crime_rate": 51,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tawang": {
+            "crime_rate": 10,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tirap": {
+            "crime_rate": 13,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Upper Dibang Valley": {
+            "crime_rate": 1,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Crime Branch": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kukung Kumey": {
+            "crime_rate": 11,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lower Dibang Valley": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Papum Pare City": {
+            "crime_rate": 172,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Papum Pare Rural": {
+            "crime_rate": 8,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Assam": {
+        "Baksa": {
+            "crime_rate": 108,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Barpeta": {
+            "crime_rate": 2320,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bieo": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bongaigaon": {
+            "crime_rate": 291,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "C.I.D.": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cachar": {
+            "crime_rate": 952,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chirang": {
+            "crime_rate": 225,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Darrang": {
+            "crime_rate": 1764,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhemaji": {
+            "crime_rate": 351,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhubri": {
+            "crime_rate": 2161,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dibrugarh": {
+            "crime_rate": 669,
+            "zone": "yellow",
+            "lat": 27.4828,
+            "lng": 94.9104
+        },
+        "G.R.P.": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Goalpara": {
+            "crime_rate": 943,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Golaghat": {
+            "crime_rate": 629,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Guwahati City": {
+            "crime_rate": 1318,
+            "zone": "red",
+            "lat": 26.1445,
+            "lng": 91.7362
+        },
+        "Hailakandi": {
+            "crime_rate": 490,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hamren": {
+            "crime_rate": 23,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jorhat": {
+            "crime_rate": 829,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kamrup": {
+            "crime_rate": 884,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Karbi Anglong": {
+            "crime_rate": 180,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Karimganj": {
+            "crime_rate": 595,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kokrajhar": {
+            "crime_rate": 304,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lakhimpur": {
+            "crime_rate": 684,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Morigaon": {
+            "crime_rate": 1285,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "N.C.Hills": {
+            "crime_rate": 32,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nagaon": {
+            "crime_rate": 2529,
+            "zone": "red",
+            "lat": 26.3474,
+            "lng": 92.6848
+        },
+        "Nalbari": {
+            "crime_rate": 399,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "R.P.O.": {
+            "crime_rate": 12,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sibsagar": {
+            "crime_rate": 777,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sonitpur": {
+            "crime_rate": 775,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Stf": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tinsukia": {
+            "crime_rate": 504,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Udalguri": {
+            "crime_rate": 264,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baska": {
+            "crime_rate": 213,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "N. C. Hills": {
+            "crime_rate": 24,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Bihar": {
+        "Araria": {
+            "crime_rate": 188,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Arwal": {
+            "crime_rate": 86,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Aurangabad": {
+            "crime_rate": 277,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bagaha": {
+            "crime_rate": 178,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Banka": {
+            "crime_rate": 201,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Begusarai": {
+            "crime_rate": 325,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bettiah": {
+            "crime_rate": 367,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhabhua": {
+            "crime_rate": 144,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhagalpur": {
+            "crime_rate": 413,
+            "zone": "yellow",
+            "lat": 25.2439,
+            "lng": 86.9918
+        },
+        "Bhojpur": {
+            "crime_rate": 295,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Buxar": {
+            "crime_rate": 195,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Darbhanga": {
+            "crime_rate": 615,
+            "zone": "yellow",
+            "lat": 26.1492,
+            "lng": 85.8901
+        },
+        "Gaya": {
+            "crime_rate": 469,
+            "zone": "yellow",
+            "lat": 24.7969,
+            "lng": 85.0101
+        },
+        "Gopalganj": {
+            "crime_rate": 272,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jamalpur Rly.": {
+            "crime_rate": 2,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jamui": {
+            "crime_rate": 186,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jehanabad": {
+            "crime_rate": 132,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Katihar": {
+            "crime_rate": 355,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Katihar Rly.": {
+            "crime_rate": 8,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khagaria": {
+            "crime_rate": 110,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kishanganj": {
+            "crime_rate": 338,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lakhisarai": {
+            "crime_rate": 193,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Madhepura": {
+            "crime_rate": 168,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Madhubani": {
+            "crime_rate": 417,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Motihari": {
+            "crime_rate": 531,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Munger": {
+            "crime_rate": 146,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Muzaffarpur": {
+            "crime_rate": 817,
+            "zone": "red",
+            "lat": 26.1232,
+            "lng": 85.3643
+        },
+        "Muzaffarpur Rly.": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 26.1232,
+            "lng": 85.3643
+        },
+        "Nalanda": {
+            "crime_rate": 437,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Naugachia": {
+            "crime_rate": 140,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nawadah": {
+            "crime_rate": 219,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Patna": {
+            "crime_rate": 1062,
+            "zone": "red",
+            "lat": 25.5941,
+            "lng": 85.1376
+        },
+        "Patna Rly.": {
+            "crime_rate": 29,
+            "zone": "green",
+            "lat": 25.5941,
+            "lng": 85.1376
+        },
+        "Purnea": {
+            "crime_rate": 401,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rohtas": {
+            "crime_rate": 345,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Saharsa": {
+            "crime_rate": 167,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Samastipur": {
+            "crime_rate": 377,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Saran": {
+            "crime_rate": 351,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sheikhpura": {
+            "crime_rate": 129,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sheohar": {
+            "crime_rate": 81,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sitamarhi": {
+            "crime_rate": 375,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siwan": {
+            "crime_rate": 367,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Supaul": {
+            "crime_rate": 239,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vaishali": {
+            "crime_rate": 467,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jamalpur Railway": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Katihar Railway": {
+            "crime_rate": 25,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Muzaffarpur Railway": {
+            "crime_rate": 10,
+            "zone": "green",
+            "lat": 26.1232,
+            "lng": 85.3643
+        },
+        "Patna Railway": {
+            "crime_rate": 34,
+            "zone": "green",
+            "lat": 25.5941,
+            "lng": 85.1376
+        },
+        "Economic Offences Unit": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Anti Terrorist Squad": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Chandigarh": {
+        "Chandigarh": {
+            "crime_rate": 499,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Chhattisgarh": {
+        "Balod": {
+            "crime_rate": 249,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baloda Bazar": {
+            "crime_rate": 351,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Balrampur": {
+            "crime_rate": 507,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bemetara": {
+            "crime_rate": 138,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bilaspur": {
+            "crime_rate": 852,
+            "zone": "red",
+            "lat": 22.0728,
+            "lng": 82.068
+        },
+        "Bizapur": {
+            "crime_rate": 24,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dantewara": {
+            "crime_rate": 59,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhamtari": {
+            "crime_rate": 219,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Durg": {
+            "crime_rate": 963,
+            "zone": "red",
+            "lat": 21.1924,
+            "lng": 81.2847
+        },
+        "Gariyaband": {
+            "crime_rate": 208,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Grp Raipur": {
+            "crime_rate": 7,
+            "zone": "green",
+            "lat": 21.2514,
+            "lng": 81.6296
+        },
+        "Jagdalpur": {
+            "crime_rate": 201,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Janjgir": {
+            "crime_rate": 586,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jashpur": {
+            "crime_rate": 383,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kabirdham": {
+            "crime_rate": 304,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kanker": {
+            "crime_rate": 226,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kondagaon": {
+            "crime_rate": 100,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Korba": {
+            "crime_rate": 435,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Koriya": {
+            "crime_rate": 384,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahasamund": {
+            "crime_rate": 372,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mungeli": {
+            "crime_rate": 158,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Narayanpur": {
+            "crime_rate": 41,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raigarh": {
+            "crime_rate": 697,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raipur": {
+            "crime_rate": 960,
+            "zone": "red",
+            "lat": 21.2514,
+            "lng": 81.6296
+        },
+        "Rajnandgaon": {
+            "crime_rate": 407,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sarguja": {
+            "crime_rate": 461,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sukma": {
+            "crime_rate": 28,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Surajpur": {
+            "crime_rate": 333,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Balodbazar": {
+            "crime_rate": 351,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bemetra": {
+            "crime_rate": 257,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P. Raipur": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 21.2514,
+            "lng": 81.6296
+        },
+        "Mungali": {
+            "crime_rate": 141,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "D&N Haveli": {
+        "D&N Haveli": {
+            "crime_rate": 26,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Daman & Diu": {
+        "Daman": {
+            "crime_rate": 15,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Diu": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Delhi Ut": {
+        "Caw": {
+            "crime_rate": 203,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Central": {
+            "crime_rate": 837,
+            "zone": "red",
+            "lat": 28.6304,
+            "lng": 77.2177
+        },
+        "Crime Branch": {
+            "crime_rate": 5,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "East": {
+            "crime_rate": 2162,
+            "zone": "red",
+            "lat": 28.5641,
+            "lng": 77.2948
+        },
+        "Eow": {
+            "crime_rate": 4,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Grp(Rly)": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Igi Airport": {
+            "crime_rate": 28,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Metro Rail": {
+            "crime_rate": 35,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "New Delhi": {
+            "crime_rate": 207,
+            "zone": "yellow",
+            "lat": 28.6139,
+            "lng": 77.209
+        },
+        "North": {
+            "crime_rate": 672,
+            "zone": "yellow",
+            "lat": 28.6923,
+            "lng": 77.2095
+        },
+        "North-East": {
+            "crime_rate": 2089,
+            "zone": "red",
+            "lat": 28.72,
+            "lng": 77.28
+        },
+        "North-West": {
+            "crime_rate": 1604,
+            "zone": "red",
+            "lat": 28.74,
+            "lng": 77.22
+        },
+        "Outer": {
+            "crime_rate": 2277,
+            "zone": "red",
+            "lat": 28.65,
+            "lng": 77.35
+        },
+        "South": {
+            "crime_rate": 2818,
+            "zone": "red",
+            "lat": 28.5041,
+            "lng": 77.1949
+        },
+        "South-East": {
+            "crime_rate": 2170,
+            "zone": "red",
+            "lat": 28.48,
+            "lng": 77.25
+        },
+        "South-West": {
+            "crime_rate": 2056,
+            "zone": "red",
+            "lat": 28.45,
+            "lng": 77.32
+        },
+        "Stf": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "West": {
+            "crime_rate": 2163,
+            "zone": "red",
+            "lat": 28.6499,
+            "lng": 77.3269
+        },
+        "Metro": {
+            "crime_rate": 60,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railway": {
+            "crime_rate": 42,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Spl Cell": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Spuwac": {
+            "crime_rate": 160,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vigilance": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Goa": {
+        "North Goa": {
+            "crime_rate": 504,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "South Goa": {
+            "crime_rate": 257,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "C. I. D.": {
+            "crime_rate": 29,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Gujarat": {
+        "Ahmedabad Commr.": {
+            "crime_rate": 2433,
+            "zone": "red",
+            "lat": 23.0225,
+            "lng": 72.5714
+        },
+        "Ahmedabad Rural": {
+            "crime_rate": 279,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ahwa-Dang": {
+            "crime_rate": 37,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Amreli": {
+            "crime_rate": 246,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Anand": {
+            "crime_rate": 269,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bharuch": {
+            "crime_rate": 284,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhavnagar": {
+            "crime_rate": 395,
+            "zone": "yellow",
+            "lat": 21.7645,
+            "lng": 72.1519
+        },
+        "Cid Crime": {
+            "crime_rate": 1,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dahod": {
+            "crime_rate": 270,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gandhinagar": {
+            "crime_rate": 320,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Himatnagar": {
+            "crime_rate": 433,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jamnagar": {
+            "crime_rate": 583,
+            "zone": "yellow",
+            "lat": 22.4709,
+            "lng": 70.0577
+        },
+        "Junagadh": {
+            "crime_rate": 631,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kheda North": {
+            "crime_rate": 248,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kutch (East(G))": {
+            "crime_rate": 349,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kutch (West-Bhuj)": {
+            "crime_rate": 283,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mehsana": {
+            "crime_rate": 493,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Narmada": {
+            "crime_rate": 81,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Navsari": {
+            "crime_rate": 152,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Palanpur": {
+            "crime_rate": 632,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Panchmahal": {
+            "crime_rate": 375,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Patan": {
+            "crime_rate": 315,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Porbandar": {
+            "crime_rate": 155,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajkot Commr.": {
+            "crime_rate": 338,
+            "zone": "yellow",
+            "lat": 22.3039,
+            "lng": 70.8021
+        },
+        "Rajkot Rural": {
+            "crime_rate": 552,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Surat Commr.": {
+            "crime_rate": 855,
+            "zone": "red",
+            "lat": 21.1702,
+            "lng": 72.8311
+        },
+        "Surat Rural": {
+            "crime_rate": 217,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Surendranagar": {
+            "crime_rate": 275,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tapi": {
+            "crime_rate": 172,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vadodara Commr.": {
+            "crime_rate": 618,
+            "zone": "yellow",
+            "lat": 22.3074,
+            "lng": 73.1812
+        },
+        "Vadodara Rural": {
+            "crime_rate": 235,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Valsad": {
+            "crime_rate": 211,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "W.Rly Ahmedabad": {
+            "crime_rate": 12,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "W.Rly Vadodara": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ahmedabad City": {
+            "crime_rate": 1445,
+            "zone": "red",
+            "lat": 23.0225,
+            "lng": 72.5714
+        },
+        "Arvalli": {
+            "crime_rate": 124,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Banaskantha": {
+            "crime_rate": 645,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Botad": {
+            "crime_rate": 94,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chhotaudepur": {
+            "crime_rate": 88,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "C. I. D. Crime": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dang": {
+            "crime_rate": 55,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Devbhumi Dwarka": {
+            "crime_rate": 168,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gir Somnath": {
+            "crime_rate": 239,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kachchh East(G)": {
+            "crime_rate": 322,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kachchh West(B)": {
+            "crime_rate": 315,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kheda": {
+            "crime_rate": 180,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahisagar": {
+            "crime_rate": 155,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Morbi": {
+            "crime_rate": 157,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajkot City": {
+            "crime_rate": 419,
+            "zone": "yellow",
+            "lat": 22.3039,
+            "lng": 70.8021
+        },
+        "Sabarkantha": {
+            "crime_rate": 228,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Surat City": {
+            "crime_rate": 829,
+            "zone": "red",
+            "lat": 21.1702,
+            "lng": 72.8311
+        },
+        "Vadodara City": {
+            "crime_rate": 600,
+            "zone": "yellow",
+            "lat": 22.3074,
+            "lng": 73.1812
+        },
+        "W.Rly  Ahmedabad": {
+            "crime_rate": 12,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Haryana": {
+        "Ambala Rural": {
+            "crime_rate": 189,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ambala Urban": {
+            "crime_rate": 353,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhiwani": {
+            "crime_rate": 467,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Faridabad": {
+            "crime_rate": 813,
+            "zone": "red",
+            "lat": 28.4089,
+            "lng": 77.3178
+        },
+        "Fatehabad": {
+            "crime_rate": 350,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Grp": {
+            "crime_rate": 81,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gurgaon": {
+            "crime_rate": 979,
+            "zone": "red",
+            "lat": 28.428,
+            "lng": 77.1094
+        },
+        "Hissar": {
+            "crime_rate": 686,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "I&P Haryana": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jhajjar": {
+            "crime_rate": 415,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jind": {
+            "crime_rate": 344,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kaithal": {
+            "crime_rate": 329,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Karnal": {
+            "crime_rate": 741,
+            "zone": "red",
+            "lat": 29.6857,
+            "lng": 76.9905
+        },
+        "Kurukshetra": {
+            "crime_rate": 337,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahendragarh": {
+            "crime_rate": 303,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mewat": {
+            "crime_rate": 537,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Palwal": {
+            "crime_rate": 535,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Panchkula": {
+            "crime_rate": 251,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Panipat": {
+            "crime_rate": 631,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rewari": {
+            "crime_rate": 420,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rohtak": {
+            "crime_rate": 576,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sirsa": {
+            "crime_rate": 499,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sonipat": {
+            "crime_rate": 569,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Yamunanagar": {
+            "crime_rate": 488,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ambala (Rural)": {
+            "crime_rate": 176,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ambala (Urban)": {
+            "crime_rate": 260,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 46,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahendergarh": {
+            "crime_rate": 291,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Irrigation & Power": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Himachal Pradesh": {
+        "Baddipolicedist": {
+            "crime_rate": 67,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bilaspur": {
+            "crime_rate": 215,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chamba": {
+            "crime_rate": 129,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cid": {
+            "crime_rate": 1,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G.R.P.": {
+            "crime_rate": 1,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hamirpur": {
+            "crime_rate": 144,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kangra": {
+            "crime_rate": 348,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kinnaur": {
+            "crime_rate": 44,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kullu": {
+            "crime_rate": 139,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lahaul-Spiti": {
+            "crime_rate": 2,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mandi": {
+            "crime_rate": 403,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shimla": {
+            "crime_rate": 283,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sirmaur": {
+            "crime_rate": 202,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Solan": {
+            "crime_rate": 120,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Una": {
+            "crime_rate": 192,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baddi": {
+            "crime_rate": 78,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "C. I. D.": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lahaul & Spiti": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Jammu & Kashmir": {
+        "Anantnag": {
+            "crime_rate": 266,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Awantipora": {
+            "crime_rate": 57,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bandipora": {
+            "crime_rate": 127,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baramulla": {
+            "crime_rate": 277,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Budgam": {
+            "crime_rate": 113,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Crime Jammu": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Crime Srinagar": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Doda": {
+            "crime_rate": 211,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ganderbal": {
+            "crime_rate": 113,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Handwara": {
+            "crime_rate": 171,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jammu": {
+            "crime_rate": 581,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kargil": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kathua": {
+            "crime_rate": 181,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kishtwar": {
+            "crime_rate": 73,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kulgam": {
+            "crime_rate": 376,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kupwara": {
+            "crime_rate": 166,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Leh": {
+            "crime_rate": 24,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Poonch": {
+            "crime_rate": 156,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pulwama": {
+            "crime_rate": 69,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railways Jammu": {
+            "crime_rate": 4,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railways Kashmir": {
+            "crime_rate": 4,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railways Katra": {
+            "crime_rate": 1,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajouri": {
+            "crime_rate": 336,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ramban": {
+            "crime_rate": 102,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Reasi": {
+            "crime_rate": 104,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Samba": {
+            "crime_rate": 56,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shopian": {
+            "crime_rate": 65,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sopore": {
+            "crime_rate": 197,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Srinagar": {
+            "crime_rate": 586,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Udhampur": {
+            "crime_rate": 167,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Jharkhand": {
+        "Bokaro": {
+            "crime_rate": 402,
+            "zone": "yellow",
+            "lat": 23.669,
+            "lng": 86.1511
+        },
+        "Chaibasa": {
+            "crime_rate": 238,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chatra": {
+            "crime_rate": 219,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Deoghar": {
+            "crime_rate": 407,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhanbad": {
+            "crime_rate": 418,
+            "zone": "yellow",
+            "lat": 23.7957,
+            "lng": 86.4304
+        },
+        "Dhanbad Rly.": {
+            "crime_rate": 16,
+            "zone": "green",
+            "lat": 23.7957,
+            "lng": 86.4304
+        },
+        "Dumka": {
+            "crime_rate": 229,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garhwa": {
+            "crime_rate": 269,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Giridih": {
+            "crime_rate": 495,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Godda": {
+            "crime_rate": 162,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gumla": {
+            "crime_rate": 308,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hazaribagh": {
+            "crime_rate": 324,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jamshedpur": {
+            "crime_rate": 458,
+            "zone": "yellow",
+            "lat": 22.8268,
+            "lng": 86.2553
+        },
+        "Jamshedpur Rly.": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 22.8268,
+            "lng": 86.2553
+        },
+        "Jamtara": {
+            "crime_rate": 221,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khunti": {
+            "crime_rate": 66,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Koderma": {
+            "crime_rate": 119,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Latehar": {
+            "crime_rate": 100,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lohardagga": {
+            "crime_rate": 165,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pakur": {
+            "crime_rate": 289,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Palamu": {
+            "crime_rate": 229,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ramgarh": {
+            "crime_rate": 237,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ranchi": {
+            "crime_rate": 311,
+            "zone": "yellow",
+            "lat": 23.3441,
+            "lng": 85.3095
+        },
+        "Sahebganj": {
+            "crime_rate": 385,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Saraikela": {
+            "crime_rate": 219,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Simdega": {
+            "crime_rate": 98,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhanbad Railway": {
+            "crime_rate": 15,
+            "zone": "green",
+            "lat": 23.7957,
+            "lng": 86.4304
+        },
+        "Jamshedpur Railway": {
+            "crime_rate": 5,
+            "zone": "green",
+            "lat": 22.8268,
+            "lng": 86.2553
         }
     },
     "Karnataka": {
-        "Bengaluru": {
-            "crime_rate": 12400,
-            "zone": "red"
+        "Bagalkot": {
+            "crime_rate": 316,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
-        "Mysuru": {
-            "crime_rate": 2100,
-            "zone": "yellow"
+        "Bangalore Commr.": {
+            "crime_rate": 1603,
+            "zone": "red",
+            "lat": 12.9716,
+            "lng": 77.5946
+        },
+        "Bangalore Rural": {
+            "crime_rate": 406,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Belgaum": {
+            "crime_rate": 551,
+            "zone": "yellow",
+            "lat": 15.8497,
+            "lng": 74.5
+        },
+        "Bellary": {
+            "crime_rate": 221,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bidar": {
+            "crime_rate": 398,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bijapur": {
+            "crime_rate": 237,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cbpura": {
+            "crime_rate": 174,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chamarajnagar": {
+            "crime_rate": 218,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chickmagalur": {
+            "crime_rate": 274,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chitradurga": {
+            "crime_rate": 653,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dakshin Kannada": {
+            "crime_rate": 148,
+            "zone": "yellow",
+            "lat": 12.9141,
+            "lng": 74.856
+        },
+        "Davanagere": {
+            "crime_rate": 583,
+            "zone": "yellow",
+            "lat": 14.4684,
+            "lng": 75.9237
+        },
+        "Dharwad Commr.": {
+            "crime_rate": 222,
+            "zone": "yellow",
+            "lat": 15.4589,
+            "lng": 75.0078
+        },
+        "Dharwad Rural": {
+            "crime_rate": 80,
+            "zone": "green",
+            "lat": 15.4589,
+            "lng": 75.0078
+        },
+        "Gadag": {
+            "crime_rate": 131,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gulbarga": {
+            "crime_rate": 355,
+            "zone": "yellow",
+            "lat": 17.3287,
+            "lng": 76.8333
+        },
+        "Hassan": {
+            "crime_rate": 805,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Haveri": {
+            "crime_rate": 365,
+            "zone": "yellow",
+            "lat": 15.9488,
+            "lng": 75.6341
+        },
+        "K.G.F.": {
+            "crime_rate": 118,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kodagu": {
+            "crime_rate": 241,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kolar": {
+            "crime_rate": 252,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Koppal": {
+            "crime_rate": 206,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mandya": {
+            "crime_rate": 832,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mangalore City": {
+            "crime_rate": 151,
+            "zone": "yellow",
+            "lat": 12.9141,
+            "lng": 74.856
+        },
+        "Mysore Commr.": {
+            "crime_rate": 102,
+            "zone": "yellow",
+            "lat": 12.2958,
+            "lng": 76.6394
+        },
+        "Mysore Rural": {
+            "crime_rate": 179,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raichur": {
+            "crime_rate": 706,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railways": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ramanagar": {
+            "crime_rate": 485,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shimoga": {
+            "crime_rate": 1228,
+            "zone": "red",
+            "lat": 13.9322,
+            "lng": 75.5715
+        },
+        "Tumkur": {
+            "crime_rate": 360,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
         "Udupi": {
-            "crime_rate": 800,
-            "zone": "green"
+            "crime_rate": 348,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Uttar Kannada": {
+            "crime_rate": 323,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Yadgiri": {
+            "crime_rate": 470,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bengaluru City": {
+            "crime_rate": 2285,
+            "zone": "red",
+            "lat": 12.9716,
+            "lng": 77.5946
+        },
+        "Bengaluru District": {
+            "crime_rate": 569,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Belagavi District": {
+            "crime_rate": 814,
+            "zone": "red",
+            "lat": 15.8497,
+            "lng": 74.5
+        },
+        "Ballari": {
+            "crime_rate": 470,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vijayapura": {
+            "crime_rate": 497,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chikkaballapura": {
+            "crime_rate": 365,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chikkamagaluru": {
+            "crime_rate": 551,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dakshina Kannada": {
+            "crime_rate": 296,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dharwad": {
+            "crime_rate": 151,
+            "zone": "yellow",
+            "lat": 15.4589,
+            "lng": 75.0078
+        },
+        "Kalaburgi": {
+            "crime_rate": 601,
+            "zone": "yellow",
+            "lat": 17.3287,
+            "lng": 76.8333
+        },
+        "Hubballi Dharwad City": {
+            "crime_rate": 175,
+            "zone": "yellow",
+            "lat": 15.3647,
+            "lng": 75.128
+        },
+        "Mangaluru City": {
+            "crime_rate": 278,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mysuru City": {
+            "crime_rate": 335,
+            "zone": "yellow",
+            "lat": 12.2958,
+            "lng": 76.6394
+        },
+        "Mysuru District": {
+            "crime_rate": 657,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "K.Railways": {
+            "crime_rate": 24,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tumakuru": {
+            "crime_rate": 703,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Uttara Kannada": {
+            "crime_rate": 441,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Belagavi City": {
+            "crime_rate": 321,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
         }
     },
-    "Delhi": {
-        "New Delhi": {
-            "crime_rate": 15000,
-            "zone": "red"
+    "Kerala": {
+        "Alapuzha": {
+            "crime_rate": 939,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
         },
-        "South Delhi": {
-            "crime_rate": 9000,
-            "zone": "red"
+        "Ernakulam Commr.": {
+            "crime_rate": 697,
+            "zone": "red",
+            "lat": 9.9312,
+            "lng": 76.2674
+        },
+        "Ernakulam Rural": {
+            "crime_rate": 869,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Idukki": {
+            "crime_rate": 601,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kannur": {
+            "crime_rate": 952,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kasargod": {
+            "crime_rate": 638,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kollam Commr.": {
+            "crime_rate": 1118,
+            "zone": "red",
+            "lat": 8.8932,
+            "lng": 76.5884
+        },
+        "Kollam Rural": {
+            "crime_rate": 1008,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kottayam": {
+            "crime_rate": 677,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kozhikode Commr.": {
+            "crime_rate": 515,
+            "zone": "yellow",
+            "lat": 11.2588,
+            "lng": 75.6824
+        },
+        "Kozhikode Rural": {
+            "crime_rate": 924,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Malappuram": {
+            "crime_rate": 1602,
+            "zone": "red",
+            "lat": 11.051,
+            "lng": 76.073
+        },
+        "Palakkad": {
+            "crime_rate": 1087,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pathanamthitta": {
+            "crime_rate": 632,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Railways": {
+            "crime_rate": 162,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thrissur Commr.": {
+            "crime_rate": 469,
+            "zone": "yellow",
+            "lat": 10.5276,
+            "lng": 76.2144
+        },
+        "Thrissur Rural": {
+            "crime_rate": 1369,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trivandrum Commr.": {
+            "crime_rate": 811,
+            "zone": "red",
+            "lat": 8.5241,
+            "lng": 76.9362
+        },
+        "Trivandrum Rural": {
+            "crime_rate": 1951,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Wayanadu": {
+            "crime_rate": 590,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Crime Branch": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Lakshadweep": {
+        "Lakshadweep": {
+            "crime_rate": 7,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Madhya Pradesh": {
+        "Agar": {
+            "crime_rate": 250,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Alirajpur": {
+            "crime_rate": 91,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Anuppur": {
+            "crime_rate": 576,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ashok Nagar": {
+            "crime_rate": 667,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Balaghat": {
+            "crime_rate": 863,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Barwani": {
+            "crime_rate": 413,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Betul": {
+            "crime_rate": 1736,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhind": {
+            "crime_rate": 634,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhopal": {
+            "crime_rate": 1741,
+            "zone": "red",
+            "lat": 23.2599,
+            "lng": 77.4126
+        },
+        "Bhopal Rly.": {
+            "crime_rate": 28,
+            "zone": "green",
+            "lat": 23.2599,
+            "lng": 77.4126
+        },
+        "Burhanpur": {
+            "crime_rate": 376,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chhatarpur": {
+            "crime_rate": 794,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chhindwara": {
+            "crime_rate": 1327,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Damoh": {
+            "crime_rate": 511,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Datiya": {
+            "crime_rate": 167,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dewas": {
+            "crime_rate": 960,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhar": {
+            "crime_rate": 1022,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dindori": {
+            "crime_rate": 722,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Guna": {
+            "crime_rate": 819,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gwalior": {
+            "crime_rate": 1689,
+            "zone": "red",
+            "lat": 26.2183,
+            "lng": 78.1828
+        },
+        "Harda": {
+            "crime_rate": 337,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hoshangabad": {
+            "crime_rate": 813,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Indore": {
+            "crime_rate": 1932,
+            "zone": "red",
+            "lat": 22.7196,
+            "lng": 75.8577
+        },
+        "Indore Rly.": {
+            "crime_rate": 19,
+            "zone": "green",
+            "lat": 22.7196,
+            "lng": 75.8577
+        },
+        "Jabalpur": {
+            "crime_rate": 1738,
+            "zone": "red",
+            "lat": 23.1815,
+            "lng": 79.9865
+        },
+        "Jabalpur Rly.": {
+            "crime_rate": 18,
+            "zone": "green",
+            "lat": 23.1815,
+            "lng": 79.9865
+        },
+        "Jhabua": {
+            "crime_rate": 374,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Katni": {
+            "crime_rate": 723,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khandwa": {
+            "crime_rate": 918,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khargon": {
+            "crime_rate": 636,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mandla": {
+            "crime_rate": 479,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mandsaur": {
+            "crime_rate": 828,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Morena": {
+            "crime_rate": 620,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Narsinghpur": {
+            "crime_rate": 836,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Neemuch": {
+            "crime_rate": 363,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Panna": {
+            "crime_rate": 339,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raisen": {
+            "crime_rate": 1023,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajgarh": {
+            "crime_rate": 900,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ratlam": {
+            "crime_rate": 659,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rewa": {
+            "crime_rate": 797,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sagar": {
+            "crime_rate": 1407,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Satna": {
+            "crime_rate": 1244,
+            "zone": "red",
+            "lat": 24.6022,
+            "lng": 80.825
+        },
+        "Seoni": {
+            "crime_rate": 585,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shahdol": {
+            "crime_rate": 1214,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shajapur": {
+            "crime_rate": 618,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sheopur": {
+            "crime_rate": 227,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shivpuri": {
+            "crime_rate": 968,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sidhi": {
+            "crime_rate": 405,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sihore": {
+            "crime_rate": 341,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Singrauli": {
+            "crime_rate": 589,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tikamgarh": {
+            "crime_rate": 607,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ujjain": {
+            "crime_rate": 1268,
+            "zone": "red",
+            "lat": 23.1794,
+            "lng": 75.5789
+        },
+        "Umariya": {
+            "crime_rate": 216,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vidisha": {
+            "crime_rate": 1264,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhopal Railway": {
+            "crime_rate": 52,
+            "zone": "green",
+            "lat": 23.2599,
+            "lng": 77.4126
+        },
+        "Datia": {
+            "crime_rate": 349,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Indore Railway": {
+            "crime_rate": 30,
+            "zone": "green",
+            "lat": 22.7196,
+            "lng": 75.8577
+        },
+        "Jabalpur Railway": {
+            "crime_rate": 56,
+            "zone": "green",
+            "lat": 23.1815,
+            "lng": 79.9865
+        },
+        "Khargone": {
+            "crime_rate": 968,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sehore": {
+            "crime_rate": 872,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Umaria": {
+            "crime_rate": 456,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cyber Cell": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Maharashtra": {
+        "Ahmednagar": {
+            "crime_rate": 1131,
+            "zone": "red",
+            "lat": 19.5196,
+            "lng": 74.5858
+        },
+        "Akola": {
+            "crime_rate": 754,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Amravati Commr.": {
+            "crime_rate": 466,
+            "zone": "yellow",
+            "lat": 20.9333,
+            "lng": 77.75
+        },
+        "Amravati Rural": {
+            "crime_rate": 1361,
+            "zone": "red",
+            "lat": 20.9333,
+            "lng": 77.75
+        },
+        "Aurangabad Commr.": {
+            "crime_rate": 689,
+            "zone": "red",
+            "lat": 19.8762,
+            "lng": 75.3623
+        },
+        "Aurangabad Rural": {
+            "crime_rate": 662,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Beed": {
+            "crime_rate": 1064,
+            "zone": "red",
+            "lat": 18.9896,
+            "lng": 75.7606
+        },
+        "Bhandara": {
+            "crime_rate": 284,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Buldhana": {
+            "crime_rate": 877,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chandrapur": {
+            "crime_rate": 979,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhule": {
+            "crime_rate": 521,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gadchiroli": {
+            "crime_rate": 148,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gondia": {
+            "crime_rate": 455,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hingoli": {
+            "crime_rate": 316,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jalgaon": {
+            "crime_rate": 1301,
+            "zone": "red",
+            "lat": 21.0077,
+            "lng": 75.5627
+        },
+        "Jalna": {
+            "crime_rate": 779,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kolhapur": {
+            "crime_rate": 764,
+            "zone": "red",
+            "lat": 16.705,
+            "lng": 74.2433
+        },
+        "Latur": {
+            "crime_rate": 848,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mumbai Commr.": {
+            "crime_rate": 6060,
+            "zone": "red",
+            "lat": 19.076,
+            "lng": 72.8777
+        },
+        "Mumbai Rly.": {
+            "crime_rate": 57,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nagpur Commr.": {
+            "crime_rate": 1159,
+            "zone": "red",
+            "lat": 21.1458,
+            "lng": 79.0882
+        },
+        "Nagpur Rly.": {
+            "crime_rate": 23,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nagpur Rural": {
+            "crime_rate": 678,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nanded": {
+            "crime_rate": 624,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nandurbar": {
+            "crime_rate": 192,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nasik Commr.": {
+            "crime_rate": 478,
+            "zone": "yellow",
+            "lat": 20.006,
+            "lng": 73.789
+        },
+        "Nasik Rural": {
+            "crime_rate": 1112,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Navi Mumbai": {
+            "crime_rate": 757,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Osmanabad": {
+            "crime_rate": 502,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Parbhani": {
+            "crime_rate": 646,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pune Commr.": {
+            "crime_rate": 1979,
+            "zone": "red",
+            "lat": 18.5204,
+            "lng": 73.8567
+        },
+        "Pune Rly.": {
+            "crime_rate": 12,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pune Rural": {
+            "crime_rate": 1421,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raigad": {
+            "crime_rate": 409,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ratnagiri": {
+            "crime_rate": 257,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sangli": {
+            "crime_rate": 629,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Satara": {
+            "crime_rate": 971,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sindhudurg": {
+            "crime_rate": 130,
+            "zone": "yellow",
+            "lat": 16.0967,
+            "lng": 73.5786
+        },
+        "Solapur Commr.": {
+            "crime_rate": 281,
+            "zone": "yellow",
+            "lat": 17.6599,
+            "lng": 74.006
+        },
+        "Solapur Rural": {
+            "crime_rate": 870,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thane Commr.": {
+            "crime_rate": 2214,
+            "zone": "red",
+            "lat": 19.186,
+            "lng": 72.975
+        },
+        "Thane Rural": {
+            "crime_rate": 756,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Wardha": {
+            "crime_rate": 675,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Washim": {
+            "crime_rate": 584,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Yavatmal": {
+            "crime_rate": 2045,
+            "zone": "red",
+            "lat": 20.3888,
+            "lng": 78.1123
+        },
+        "Mumbai Railway": {
+            "crime_rate": 118,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nagpur Railway": {
+            "crime_rate": 49,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Palghar": {
+            "crime_rate": 751,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pune Railway": {
+            "crime_rate": 17,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Manipur": {
+        "Bishnupur": {
+            "crime_rate": 42,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chandel": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Churachandpur": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cid": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Imphal East": {
+            "crime_rate": 84,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Imphal West": {
+            "crime_rate": 165,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Senapati": {
+            "crime_rate": 7,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tamenglong": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thoubal": {
+            "crime_rate": 139,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ukhrul": {
+            "crime_rate": 7,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "C. I. D.": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Meghalaya": {
+        "Garo Hills East": {
+            "crime_rate": 16,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garo Hills North": {
+            "crime_rate": 25,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garo Hills South": {
+            "crime_rate": 18,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garo Hills South W.": {
+            "crime_rate": 16,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garo Hills West": {
+            "crime_rate": 79,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jaintia Hills East": {
+            "crime_rate": 47,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jaintia Hills West": {
+            "crime_rate": 39,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khasi Hills East": {
+            "crime_rate": 201,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khasi Hills South W.": {
+            "crime_rate": 17,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khasi Hills West": {
+            "crime_rate": 65,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ri-Bhoi": {
+            "crime_rate": 113,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Garo Hills South West": {
+            "crime_rate": 30,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khasi Hills South West": {
+            "crime_rate": 44,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Mizoram": {
+        "Aizawl": {
+            "crime_rate": 233,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Champhai": {
+            "crime_rate": 95,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kolasib": {
+            "crime_rate": 52,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lawngtlai": {
+            "crime_rate": 32,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lunglei": {
+            "crime_rate": 68,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mamit": {
+            "crime_rate": 44,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Saiha": {
+            "crime_rate": 14,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Serchhip": {
+            "crime_rate": 42,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Spl Narcotic": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Traffic Ps": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Spl Traffic": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Nagaland": {
+        "Dimapur": {
+            "crime_rate": 62,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kiphire": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kohima": {
+            "crime_rate": 27,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Longleng": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mokokchung": {
+            "crime_rate": 5,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mon": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Peren": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Phek": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tuensang": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Wokha": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Zunheboto": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Odisha": {
+        "Angul": {
+            "crime_rate": 540,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Balasore": {
+            "crime_rate": 1777,
+            "zone": "red",
+            "lat": 21.2788,
+            "lng": 86.8538
+        },
+        "Baragarh": {
+            "crime_rate": 450,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Berhampur": {
+            "crime_rate": 550,
+            "zone": "yellow",
+            "lat": 19.3143,
+            "lng": 84.7946
+        },
+        "Bhadrak": {
+            "crime_rate": 676,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bolangir": {
+            "crime_rate": 599,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Boudh": {
+            "crime_rate": 233,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cuttack": {
+            "crime_rate": 297,
+            "zone": "yellow",
+            "lat": 20.4625,
+            "lng": 85.8826
+        },
+        "Dcp Bbsr": {
+            "crime_rate": 465,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dcp Ctc": {
+            "crime_rate": 532,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Deogarh": {
+            "crime_rate": 213,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dhenkanal": {
+            "crime_rate": 830,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gajapati": {
+            "crime_rate": 221,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ganjam": {
+            "crime_rate": 1150,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jagatsinghpur": {
+            "crime_rate": 599,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jajpur": {
+            "crime_rate": 813,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jharsuguda": {
+            "crime_rate": 405,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kalahandi": {
+            "crime_rate": 848,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kandhamal": {
+            "crime_rate": 445,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kendrapara": {
+            "crime_rate": 682,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Keonjhar": {
+            "crime_rate": 934,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khurda": {
+            "crime_rate": 346,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Koraput": {
+            "crime_rate": 634,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Malkangir": {
+            "crime_rate": 92,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mayurbhanj": {
+            "crime_rate": 1353,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nayagarh": {
+            "crime_rate": 161,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nowrangpur": {
+            "crime_rate": 329,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nuapada": {
+            "crime_rate": 448,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Puri": {
+            "crime_rate": 676,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rayagada": {
+            "crime_rate": 490,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rourkela": {
+            "crime_rate": 695,
+            "zone": "red",
+            "lat": 22.2497,
+            "lng": 84.8776
+        },
+        "Sambalpur": {
+            "crime_rate": 484,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sonepur": {
+            "crime_rate": 160,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Srp(Cuttack)": {
+            "crime_rate": 4,
+            "zone": "green",
+            "lat": 20.4625,
+            "lng": 85.8826
+        },
+        "Srp(Rourkela)": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 22.2497,
+            "lng": 84.8776
+        },
+        "Sundargarh": {
+            "crime_rate": 421,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Malkangiri": {
+            "crime_rate": 133,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nabarangpur": {
+            "crime_rate": 664,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Srp (Cuttack)": {
+            "crime_rate": 25,
+            "zone": "green",
+            "lat": 20.4625,
+            "lng": 85.8826
+        },
+        "Srp (Rourkela)": {
+            "crime_rate": 23,
+            "zone": "green",
+            "lat": 22.2497,
+            "lng": 84.8776
+        }
+    },
+    "Puducherry": {
+        "Karaikal": {
+            "crime_rate": 35,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Puducherry": {
+            "crime_rate": 66,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Punjab": {
+        "Amritsar Rural": {
+            "crime_rate": 323,
+            "zone": "yellow",
+            "lat": 31.634,
+            "lng": 74.8723
+        },
+        "Barnala": {
+            "crime_rate": 157,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Batala": {
+            "crime_rate": 208,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhatinda": {
+            "crime_rate": 252,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cp Amritsar": {
+            "crime_rate": 356,
+            "zone": "yellow",
+            "lat": 31.634,
+            "lng": 74.8723
+        },
+        "Cp Jalandhar": {
+            "crime_rate": 411,
+            "zone": "yellow",
+            "lat": 31.327,
+            "lng": 75.5754
+        },
+        "Cp Ludhiana": {
+            "crime_rate": 732,
+            "zone": "red",
+            "lat": 30.901,
+            "lng": 75.8573
+        },
+        "Faridkot": {
+            "crime_rate": 121,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Fatehgarh Sahib": {
+            "crime_rate": 160,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Fazilka": {
+            "crime_rate": 261,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ferozpur": {
+            "crime_rate": 104,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G.R.P": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gurdaspur": {
+            "crime_rate": 207,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hoshiarpur": {
+            "crime_rate": 320,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jalandhar Rural": {
+            "crime_rate": 204,
+            "zone": "yellow",
+            "lat": 31.327,
+            "lng": 75.5754
+        },
+        "Kapurthala": {
+            "crime_rate": 230,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khanna": {
+            "crime_rate": 178,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ludhiana Rural": {
+            "crime_rate": 123,
+            "zone": "yellow",
+            "lat": 30.901,
+            "lng": 75.8573
+        },
+        "Mansa": {
+            "crime_rate": 158,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Moga": {
+            "crime_rate": 188,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Muktsar": {
+            "crime_rate": 160,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pathankot": {
+            "crime_rate": 140,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Patiala": {
+            "crime_rate": 432,
+            "zone": "yellow",
+            "lat": 30.3398,
+            "lng": 76.3867
+        },
+        "Ropar": {
+            "crime_rate": 208,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sangrur": {
+            "crime_rate": 372,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sas Ngr": {
+            "crime_rate": 395,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sbs Nagar": {
+            "crime_rate": 141,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tarn Taran": {
+            "crime_rate": 247,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bathinda": {
+            "crime_rate": 403,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ferozepur": {
+            "crime_rate": 280,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 10,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sas Nagar": {
+            "crime_rate": 376,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Rajasthan": {
+        "Ajmer": {
+            "crime_rate": 1607,
+            "zone": "red",
+            "lat": 26.4495,
+            "lng": 74.6389
+        },
+        "Alwar": {
+            "crime_rate": 2192,
+            "zone": "red",
+            "lat": 27.5634,
+            "lng": 76.6256
+        },
+        "Banswara": {
+            "crime_rate": 860,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baran": {
+            "crime_rate": 987,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Barmer": {
+            "crime_rate": 1144,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bharatpur": {
+            "crime_rate": 1590,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bhilwara": {
+            "crime_rate": 1482,
+            "zone": "red",
+            "lat": 25.3471,
+            "lng": 74.6317
+        },
+        "Bikaner": {
+            "crime_rate": 1009,
+            "zone": "red",
+            "lat": 28.0229,
+            "lng": 73.3119
+        },
+        "Bundi": {
+            "crime_rate": 928,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chittorgarh": {
+            "crime_rate": 1255,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Churu": {
+            "crime_rate": 738,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dausa": {
+            "crime_rate": 650,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dholpur": {
+            "crime_rate": 594,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Discom": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dungarpur": {
+            "crime_rate": 844,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G.R.P.Ajmer": {
+            "crime_rate": 23,
+            "zone": "green",
+            "lat": 26.4495,
+            "lng": 74.6389
+        },
+        "G.R.P.Jodhpur": {
+            "crime_rate": 17,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ganganagar": {
+            "crime_rate": 1780,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hanumangarh": {
+            "crime_rate": 1274,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jaipur East": {
+            "crime_rate": 861,
+            "zone": "red",
+            "lat": 26.9124,
+            "lng": 75.7873
+        },
+        "Jaipur North": {
+            "crime_rate": 576,
+            "zone": "yellow",
+            "lat": 26.9124,
+            "lng": 75.7873
+        },
+        "Jaipur Rural": {
+            "crime_rate": 871,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jaipur South": {
+            "crime_rate": 577,
+            "zone": "yellow",
+            "lat": 26.9124,
+            "lng": 75.7873
+        },
+        "Jaipur West": {
+            "crime_rate": 835,
+            "zone": "red",
+            "lat": 26.9124,
+            "lng": 75.7873
+        },
+        "Jaisalmer": {
+            "crime_rate": 271,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jalore": {
+            "crime_rate": 537,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jhalawar": {
+            "crime_rate": 1572,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jhunjhunu": {
+            "crime_rate": 721,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jodhpur East": {
+            "crime_rate": 488,
+            "zone": "yellow",
+            "lat": 26.2389,
+            "lng": 73.0243
+        },
+        "Jodhpur Rural": {
+            "crime_rate": 565,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jodhpur West": {
+            "crime_rate": 537,
+            "zone": "yellow",
+            "lat": 26.2389,
+            "lng": 73.0243
+        },
+        "Karauli": {
+            "crime_rate": 583,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kota City": {
+            "crime_rate": 1049,
+            "zone": "red",
+            "lat": 25.2138,
+            "lng": 75.8648
+        },
+        "Kota Rural": {
+            "crime_rate": 825,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nagaur": {
+            "crime_rate": 1018,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pali": {
+            "crime_rate": 1512,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pratapgarh": {
+            "crime_rate": 848,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rajsamand": {
+            "crime_rate": 590,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sawai Madhopur": {
+            "crime_rate": 730,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sikar": {
+            "crime_rate": 776,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sirohi": {
+            "crime_rate": 592,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tonk": {
+            "crime_rate": 762,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Udaipur": {
+            "crime_rate": 2409,
+            "zone": "red",
+            "lat": 24.5854,
+            "lng": 73.7125
+        },
+        "Praapgarh": {
+            "crime_rate": 1533,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Sikkim": {
+        "East": {
+            "crime_rate": 88,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "North": {
+            "crime_rate": 9,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "South": {
+            "crime_rate": 75,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "West": {
+            "crime_rate": 55,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cid": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Tamil Nadu": {
+        "Ariyalur": {
+            "crime_rate": 73,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chennai": {
+            "crime_rate": 785,
+            "zone": "red",
+            "lat": 13.0827,
+            "lng": 80.2707
+        },
+        "Chennai Rly.": {
+            "crime_rate": 6,
+            "zone": "green",
+            "lat": 13.0827,
+            "lng": 80.2707
+        },
+        "Coimbatore Rural": {
+            "crime_rate": 126,
+            "zone": "yellow",
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "Coimbatore Urban": {
+            "crime_rate": 88,
+            "zone": "green",
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "Cuddalore": {
+            "crime_rate": 164,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dharmapuri": {
+            "crime_rate": 290,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dindigul": {
+            "crime_rate": 250,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Erode": {
+            "crime_rate": 86,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kanchipuram": {
+            "crime_rate": 86,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kanyakumari": {
+            "crime_rate": 166,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Karur": {
+            "crime_rate": 53,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Krishnagiri": {
+            "crime_rate": 183,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Madurai Rural": {
+            "crime_rate": 486,
+            "zone": "yellow",
+            "lat": 9.9252,
+            "lng": 78.1198
+        },
+        "Madurai Urban": {
+            "crime_rate": 155,
+            "zone": "yellow",
+            "lat": 9.9252,
+            "lng": 78.1198
+        },
+        "Nagapattinam": {
+            "crime_rate": 126,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Namakkal": {
+            "crime_rate": 144,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nilgiris": {
+            "crime_rate": 48,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Perambalur": {
+            "crime_rate": 61,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pudukottai": {
+            "crime_rate": 130,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ramnathapuram": {
+            "crime_rate": 80,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Salem Rural": {
+            "crime_rate": 202,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Salem Urban": {
+            "crime_rate": 102,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sivagangai": {
+            "crime_rate": 168,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thanjavur": {
+            "crime_rate": 188,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Theni": {
+            "crime_rate": 167,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thirunelveli Rural": {
+            "crime_rate": 760,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thirunelveli Urban": {
+            "crime_rate": 40,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thiruvallur": {
+            "crime_rate": 83,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thiruvannamalai": {
+            "crime_rate": 163,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thiruvarur": {
+            "crime_rate": 53,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thoothugudi": {
+            "crime_rate": 211,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tiruppur": {
+            "crime_rate": 205,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trichy Rly.": {
+            "crime_rate": 3,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trichy Rural": {
+            "crime_rate": 139,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trichy Urban": {
+            "crime_rate": 64,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Vellore": {
+            "crime_rate": 271,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Villupuram": {
+            "crime_rate": 554,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Virudhunagar": {
+            "crime_rate": 125,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Coimbatore": {
+            "crime_rate": 110,
+            "zone": "yellow",
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "Coimbatore City": {
+            "crime_rate": 94,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Madurai": {
+            "crime_rate": 611,
+            "zone": "yellow",
+            "lat": 9.9252,
+            "lng": 78.1198
+        },
+        "Madurai City": {
+            "crime_rate": 133,
+            "zone": "yellow",
+            "lat": 9.9252,
+            "lng": 78.1198
+        },
+        "Railway Chennai": {
+            "crime_rate": 11,
+            "zone": "green",
+            "lat": 13.0827,
+            "lng": 80.2707
+        },
+        "Railway Trichy": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Salem": {
+            "crime_rate": 141,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Salem City": {
+            "crime_rate": 94,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thirunelveli": {
+            "crime_rate": 361,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Thirunelveli City": {
+            "crime_rate": 44,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tiruppur City": {
+            "crime_rate": 51,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trichy": {
+            "crime_rate": 176,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Trichy City": {
+            "crime_rate": 59,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cyber Cell": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Other Units": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Telangana": {
+        "Adilabad": {
+            "crime_rate": 1093,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Cyberabad": {
+            "crime_rate": 2852,
+            "zone": "red",
+            "lat": 17.4942,
+            "lng": 78.3917
+        },
+        "Hyderabad City": {
+            "crime_rate": 2551,
+            "zone": "red",
+            "lat": 17.385,
+            "lng": 78.4867
+        },
+        "Karimnagar": {
+            "crime_rate": 1782,
+            "zone": "red",
+            "lat": 18.4386,
+            "lng": 79.1288
+        },
+        "Khammam": {
+            "crime_rate": 1690,
+            "zone": "red",
+            "lat": 17.2473,
+            "lng": 80.1514
+        },
+        "Mahaboob Nagar": {
+            "crime_rate": 1268,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Medak": {
+            "crime_rate": 994,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nalgonda": {
+            "crime_rate": 1712,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nizamabad": {
+            "crime_rate": 1264,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ranga Reddy": {
+            "crime_rate": 537,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Secunderabad Railway": {
+            "crime_rate": 16,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Warangal": {
+            "crime_rate": 768,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Warangal Urban": {
+            "crime_rate": 544,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Tripura": {
+        "Dhalai": {
+            "crime_rate": 225,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gomati": {
+            "crime_rate": 343,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Grp": {
+            "crime_rate": 0,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khowai": {
+            "crime_rate": 116,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "North": {
+            "crime_rate": 234,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sipahijala": {
+            "crime_rate": 296,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "South": {
+            "crime_rate": 236,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Unakoti": {
+            "crime_rate": 178,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "West": {
+            "crime_rate": 661,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 4,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kowai": {
+            "crime_rate": 125,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Uttar Pradesh": {
+        "Agra": {
+            "crime_rate": 1265,
+            "zone": "red",
+            "lat": 27.1767,
+            "lng": 78.0081
+        },
+        "Aligarh": {
+            "crime_rate": 1500,
+            "zone": "red",
+            "lat": 27.8974,
+            "lng": 78.0779
+        },
+        "Allahabad": {
+            "crime_rate": 1316,
+            "zone": "red",
+            "lat": 25.4358,
+            "lng": 81.8263
+        },
+        "Ambedkar Nagar": {
+            "crime_rate": 144,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Amethi": {
+            "crime_rate": 299,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Amroha": {
+            "crime_rate": 490,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Auraiya": {
+            "crime_rate": 383,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Azamgarh": {
+            "crime_rate": 503,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Badaun": {
+            "crime_rate": 626,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Baghpat": {
+            "crime_rate": 364,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bahraich": {
+            "crime_rate": 345,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ballia": {
+            "crime_rate": 333,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Balrampur": {
+            "crime_rate": 128,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Banda": {
+            "crime_rate": 718,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Barabanki": {
+            "crime_rate": 280,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bareilly": {
+            "crime_rate": 955,
+            "zone": "red",
+            "lat": 28.367,
+            "lng": 79.43
+        },
+        "Basti": {
+            "crime_rate": 212,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bijnor": {
+            "crime_rate": 631,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bulandshahar": {
+            "crime_rate": 786,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chandoli": {
+            "crime_rate": 373,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chitrakoot Dham": {
+            "crime_rate": 101,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Deoria": {
+            "crime_rate": 340,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Etah": {
+            "crime_rate": 531,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Etawah": {
+            "crime_rate": 369,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Faizabad": {
+            "crime_rate": 309,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Fatehgarh": {
+            "crime_rate": 295,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Fatehpur": {
+            "crime_rate": 505,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Firozabad": {
+            "crime_rate": 653,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G.R.P.": {
+            "crime_rate": 119,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gautambudh Nagar": {
+            "crime_rate": 719,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Ghaziabad": {
+            "crime_rate": 1500,
+            "zone": "red",
+            "lat": 28.6692,
+            "lng": 77.4538
+        },
+        "Ghazipur": {
+            "crime_rate": 298,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gonda": {
+            "crime_rate": 271,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Gorakhpur": {
+            "crime_rate": 808,
+            "zone": "red",
+            "lat": 26.7606,
+            "lng": 83.3732
+        },
+        "Hamirpur": {
+            "crime_rate": 332,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hapur": {
+            "crime_rate": 325,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hardoi": {
+            "crime_rate": 485,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hathras": {
+            "crime_rate": 499,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jalaun": {
+            "crime_rate": 192,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jaunpur": {
+            "crime_rate": 396,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Jhansi": {
+            "crime_rate": 401,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kannauj": {
+            "crime_rate": 375,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kanpur Dehat": {
+            "crime_rate": 430,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kanpur Nagar": {
+            "crime_rate": 1371,
+            "zone": "red",
+            "lat": 26.4499,
+            "lng": 80.3319
+        },
+        "Kasganj": {
+            "crime_rate": 211,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kaushambi": {
+            "crime_rate": 391,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Khiri": {
+            "crime_rate": 547,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kushi Nagar": {
+            "crime_rate": 319,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lalitpur": {
+            "crime_rate": 175,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Lucknow": {
+            "crime_rate": 2086,
+            "zone": "red",
+            "lat": 26.8467,
+            "lng": 80.9462
+        },
+        "Maharajganj": {
+            "crime_rate": 265,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mahoba": {
+            "crime_rate": 225,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mainpuri": {
+            "crime_rate": 386,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mathura": {
+            "crime_rate": 762,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Mau": {
+            "crime_rate": 279,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Meerut": {
+            "crime_rate": 1633,
+            "zone": "red",
+            "lat": 28.9845,
+            "lng": 77.5712
+        },
+        "Mirzapur": {
+            "crime_rate": 131,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Moradabad": {
+            "crime_rate": 1031,
+            "zone": "red",
+            "lat": 28.8388,
+            "lng": 78.7626
+        },
+        "Muzaffarnagar": {
+            "crime_rate": 683,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pilibhit": {
+            "crime_rate": 629,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pratapgarh": {
+            "crime_rate": 710,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Raibareilly": {
+            "crime_rate": 347,
+            "zone": "yellow",
+            "lat": 28.367,
+            "lng": 79.43
+        },
+        "Rampur": {
+            "crime_rate": 349,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Saharanpur": {
+            "crime_rate": 751,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sambhal": {
+            "crime_rate": 415,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sant Kabirnagar": {
+            "crime_rate": 128,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shahjahanpur": {
+            "crime_rate": 796,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shamli": {
+            "crime_rate": 320,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Shrawasti": {
+            "crime_rate": 142,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sidharthnagar": {
+            "crime_rate": 179,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sitapur": {
+            "crime_rate": 774,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sonbhadra": {
+            "crime_rate": 145,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "St.Ravidasnagar": {
+            "crime_rate": 144,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sultanpur": {
+            "crime_rate": 358,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Unnao": {
+            "crime_rate": 910,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Varanasi": {
+            "crime_rate": 858,
+            "zone": "red",
+            "lat": 25.3176,
+            "lng": 82.9739
+        },
+        "Chitrakoot": {
+            "crime_rate": 195,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "G. R. P.": {
+            "crime_rate": 143,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "Uttarakhand": {
+        "Almora": {
+            "crime_rate": 47,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bageshwar": {
+            "crime_rate": 20,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Chamoli": {
+            "crime_rate": 52,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Champawat": {
+            "crime_rate": 41,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dehradun": {
+            "crime_rate": 485,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Haridwar": {
+            "crime_rate": 466,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Nainital": {
+            "crime_rate": 203,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pauri Garhwal": {
+            "crime_rate": 68,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Pithoragarh": {
+            "crime_rate": 52,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Rudra Prayag": {
+            "crime_rate": 33,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Tehri Garhwal": {
+            "crime_rate": 28,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Udhamsingh Nagar": {
+            "crime_rate": 377,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Uttarkashi": {
+            "crime_rate": 50,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        }
+    },
+    "West Bengal": {
+        "24 Parganas North": {
+            "crime_rate": 2439,
+            "zone": "red",
+            "lat": 22.6167,
+            "lng": 88.4029
+        },
+        "24 Parganas South": {
+            "crime_rate": 2827,
+            "zone": "red",
+            "lat": 22.2,
+            "lng": 88.5
+        },
+        "Asansol": {
+            "crime_rate": 674,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bankura": {
+            "crime_rate": 805,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bdn Cp": {
+            "crime_rate": 378,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Birbhum": {
+            "crime_rate": 899,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bkp Cp": {
+            "crime_rate": 1103,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Burdwan": {
+            "crime_rate": 1746,
+            "zone": "red",
+            "lat": 23.2328,
+            "lng": 87.8571
+        },
+        "Coochbehar": {
+            "crime_rate": 1489,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Dakshin Dinajpur": {
+            "crime_rate": 705,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Darjeeling": {
+            "crime_rate": 604,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Hooghly": {
+            "crime_rate": 2135,
+            "zone": "red",
+            "lat": 22.8967,
+            "lng": 88.3936
+        },
+        "Howrah": {
+            "crime_rate": 942,
+            "zone": "red",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Howrah City": {
+            "crime_rate": 1038,
+            "zone": "red",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Howrah G.R.P.": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Jalpaiguri": {
+            "crime_rate": 1482,
+            "zone": "red",
+            "lat": 26.5199,
+            "lng": 88.7258
+        },
+        "Jhargram": {
+            "crime_rate": 139,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kharagpur G.R.P.": {
+            "crime_rate": 13,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kolkata": {
+            "crime_rate": 3069,
+            "zone": "red",
+            "lat": 22.5726,
+            "lng": 88.3639
+        },
+        "Malda": {
+            "crime_rate": 2363,
+            "zone": "red",
+            "lat": 25.01,
+            "lng": 88.14
+        },
+        "Murshidabad": {
+            "crime_rate": 5216,
+            "zone": "red",
+            "lat": 24.0689,
+            "lng": 88.1476
+        },
+        "Nadia": {
+            "crime_rate": 3138,
+            "zone": "red",
+            "lat": 23.55,
+            "lng": 88.0667
+        },
+        "Paschim Midnapur": {
+            "crime_rate": 1119,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Purab Midnapur": {
+            "crime_rate": 1010,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Purulia": {
+            "crime_rate": 718,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sealdah G.R.P.": {
+            "crime_rate": 60,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siliguri G.R.P.": {
+            "crime_rate": 14,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siliguri_Pc": {
+            "crime_rate": 1001,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Uttar Dinajpur": {
+            "crime_rate": 1805,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "North 24 Parganas": {
+            "crime_rate": 3570,
+            "zone": "red",
+            "lat": 22.6167,
+            "lng": 88.4029
+        },
+        "South 24 Parganas": {
+            "crime_rate": 5360,
+            "zone": "red",
+            "lat": 22.2,
+            "lng": 88.5
+        },
+        "Alipurduar": {
+            "crime_rate": 866,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Asansol-Durgapur Pc": {
+            "crime_rate": 1005,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Barrackpur Pc": {
+            "crime_rate": 1868,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Bidhannagar Pc": {
+            "crime_rate": 627,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Howrah G. R. P.": {
+            "crime_rate": 1390,
+            "zone": "red",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Howrah Pc": {
+            "crime_rate": 1285,
+            "zone": "red",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Howrah Rural": {
+            "crime_rate": 36,
+            "zone": "green",
+            "lat": 22.5958,
+            "lng": 88.2636
+        },
+        "Jhargram Police District": {
+            "crime_rate": 318,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Kharagpur G. R. P.": {
+            "crime_rate": 13,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Paschim Medinipur": {
+            "crime_rate": 2333,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Purab Medinipur": {
+            "crime_rate": 1697,
+            "zone": "red",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Sealdah G. R. P.": {
+            "crime_rate": 120,
+            "zone": "yellow",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siliguri G. R. P.": {
+            "crime_rate": 21,
+            "zone": "green",
+            "lat": 20.5937,
+            "lng": 78.9629
+        },
+        "Siliguri Pc": {
+            "crime_rate": 1083,
+            "zone": "red",
+            "lat": 26.7271,
+            "lng": 88.3952
         }
     }
 }
