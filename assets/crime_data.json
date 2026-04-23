@@ -1,0 +1,44 @@
+{
+    "Maharashtra": {
+        "Mumbai": {
+            "crime_rate": 8450,
+            "zone": "red"
+        },
+        "Pune": {
+            "crime_rate": 3210,
+            "zone": "yellow"
+        },
+        "Nagpur": {
+            "crime_rate": 4500,
+            "zone": "yellow"
+        },
+        "Sindhudurg": {
+            "crime_rate": 450,
+            "zone": "green"
+        }
+    },
+    "Karnataka": {
+        "Bengaluru": {
+            "crime_rate": 12400,
+            "zone": "red"
+        },
+        "Mysuru": {
+            "crime_rate": 2100,
+            "zone": "yellow"
+        },
+        "Udupi": {
+            "crime_rate": 800,
+            "zone": "green"
+        }
+    },
+    "Delhi": {
+        "New Delhi": {
+            "crime_rate": 15000,
+            "zone": "red"
+        },
+        "South Delhi": {
+            "crime_rate": 9000,
+            "zone": "red"
+        }
+    }
+}

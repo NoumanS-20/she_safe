@@ -1,0 +1,50 @@
+vi 
+ 
+ 
+Methodology for Data Collection & Publication 
+A) Data Collection and Compilation Process 
+Crime in India – 2022 deals with the crime data which refers to the calendar year (1st 
+January to 31st December of 2022). The data collection process including clarifications from 
+the States/UTs/Central Agencies started in Jan, 2023 and continued till June, 2023. 
+ 
+a) State/UT Police: 
+i. 
+The annual State/UT data for “Crime in India” is furnished by the 36 States/UTs in the 
+NCRB prescribed proformae through a software application developed by NCRB. 
+ii. 
+Similar data is also furnished for 53 Metropolitan Cities by respective SCRBs /CIDs (i.e. 
+Metropolitan Cities which have the population of 1 million (10 lakh) or more as per 
+Population Census, 2011). However, data pertaining to only 19 Metropolitan Cities with 
+population more than 2 million (20 lakhs) is being published in hard copy. The data for 
+remaining 34 Metropolitan Cities would, however, be available on NCRB Website.  
+iii. 
+Delhi UT comprises of both Delhi City and rural part of Delhi. 
+iv. 
+The data is entered by State/UT Police at Police Station/District level. 
+v. 
+A training is conducted every year for the functional officials (Police constables, HCs, 
+ASIs, SIs, etc. from all States/UTs) to explain the various issues concerning entry of data 
+in input tables. 
+vi. 
+The consolidation of District/State level data is done by State Police Agencies (SCRB/ 
+CID). 
+vii. 
+First level data validation is done at the Police Station/District level during the data 
+capturing process itself and Second level data validation is done at the state level at the 
+time of consolidation of District data through the NCRB application.  
+viii. 
+Data is scrutinized at NCRB for discrepancy / inconsistency. The same, if any, are 
+communicated to the respective State/UT for verification. 
+ix. 
+Amendments/Rectifications, if any, in the data are incorporated in the database by 
+NCRB. 
+ 
+b)  Central Law Enforcement Agencies/CAPFs: 
+Details of seizures and prosecutions under Prevention of Corruption Act, Direct Taxes 
+Enactments, Customs Act, NDPS Act, etc. as being furnished by CAPFs (Assam Riffles, 
+Border Security Force, Central Industrial Security Force, Central Reserve Police Force, 
+Indo Tibetan Border Police and Sashastra Seema Bal) and the respective Central Law 
+Enforcement Agencies (viz. CBI, Central Board of Direct Taxes, DRI, Narcotics Control 
+Bureau, NIA and Central Board of Indirect Taxes & Customs) have been published under  
+Chapter 20C & Chapter 20D respectively. 
+ 

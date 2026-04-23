@@ -59,9 +59,14 @@ class _ImportContactsScreenState extends State<ImportContactsScreen> {
   List<Contact> get _filteredContacts {
     if (_searchQuery.isEmpty) return _deviceContacts;
     final query = _searchQuery.toLowerCase();
+    final phoneQuery = query.replaceAll(RegExp(r'\D'), '');
+    
     return _deviceContacts.where((c) {
-      return c.displayName.toLowerCase().contains(query) ||
-          c.phones.any((p) => p.number.replaceAll(RegExp(r'\D'), '').contains(query.replaceAll(RegExp(r'\D'), '')));
+      final matchesName = c.displayName.toLowerCase().contains(query);
+      final matchesPhone = phoneQuery.isNotEmpty && 
+          c.phones.any((p) => p.number.replaceAll(RegExp(r'\D'), '').contains(phoneQuery));
+          
+      return matchesName || matchesPhone;
     }).toList();
   }
 

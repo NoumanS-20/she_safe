@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _mapNetworkAvailable = true;
   bool _showZones = true;
   String _statusMessage = 'Tap "Scan" to find your location';
-  StateZone? _currentZone;
+  DistrictZone? _currentZone;
 
   late AnimationController _pulseController;
   late AnimationController _scanController;
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         }
         if (_currentZone != null) {
           _statusMessage +=
-              '\nZone: ${_currentZone!.zone} — ${_currentZone!.name}';
+              '\nZone: ${_currentZone!.zone} — ${_currentZone!.district}';
         }
       });
 
@@ -473,9 +473,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: _currentZone!.zone == 'RED'
+                  color: _currentZone!.zone.toUpperCase() == 'RED'
                       ? Colors.red.shade600
-                      : _currentZone!.zone == 'YELLOW'
+                      : _currentZone!.zone.toUpperCase() == 'YELLOW'
                           ? Colors.amber.shade600
                           : Colors.green.shade600,
                   borderRadius: BorderRadius.circular(20),
@@ -696,16 +696,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   List<CircleMarker> _buildZoneCircles() {
     final zoneColorMap = {
+      'red': Colors.red,
+      'yellow': Colors.amber,
+      'green': Colors.green,
       'RED': Colors.red,
       'YELLOW': Colors.amber,
       'GREEN': Colors.green,
     };
 
-    return _zoneService.zoneData!.states.map((state) {
-      final color = zoneColorMap[state.zone] ?? Colors.grey;
+    return _zoneService.zoneData!.districts.map((distZone) {
+      final color = zoneColorMap[distZone.zone] ?? Colors.grey;
       return CircleMarker(
-        point: LatLng(state.latitude, state.longitude),
-        radius: 60000, // ~60km radius circles
+        point: LatLng(distZone.latitude, distZone.longitude),
+        radius: 30000, // ~30km radius circles for districts
         useRadiusInMeter: true,
         color: color.withValues(alpha: 0.12),
         borderColor: color.withValues(alpha: 0.5),
@@ -849,16 +852,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       'RED': Colors.red.shade700,
       'YELLOW': Colors.amber.shade700,
       'GREEN': Colors.green.shade700,
+      'red': Colors.red.shade700,
+      'yellow': Colors.amber.shade700,
+      'green': Colors.green.shade700,
     };
 
-    return _zoneService.zoneData!.states.map((state) {
-      final color = zoneColorMap[state.zone] ?? Colors.grey;
+    return _zoneService.zoneData!.districts.map((distZone) {
+      final color = zoneColorMap[distZone.zone] ?? Colors.grey;
       return Marker(
-        point: LatLng(state.latitude, state.longitude),
+        point: LatLng(distZone.latitude, distZone.longitude),
         width: 140,
         height: 50,
         child: GestureDetector(
-          onTap: () => _showZoneInfo(state),
+          onTap: () => _showZoneInfo(distZone),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -872,7 +878,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ],
                 ),
                 child: Text(
-                  state.name,
+                  distZone.district,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
@@ -898,13 +904,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }).toList();
   }
 
-  void _showZoneInfo(StateZone state) {
+  void _showZoneInfo(DistrictZone distZone) {
     final colorMap = {
       'RED': Colors.red,
       'YELLOW': Colors.amber,
       'GREEN': Colors.green,
+      'red': Colors.red,
+      'yellow': Colors.amber,
+      'green': Colors.green,
     };
-    final color = colorMap[state.zone] ?? Colors.grey;
+    final color = colorMap[distZone.zone] ?? Colors.grey;
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -935,9 +944,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    state.zone == 'RED'
+                    distZone.zone.toUpperCase() == 'RED'
                         ? 'HIGH RISK'
-                        : state.zone == 'YELLOW'
+                        : distZone.zone.toUpperCase() == 'YELLOW'
                             ? 'MODERATE RISK'
                             : 'LOW RISK',
                     style: const TextStyle(
@@ -950,7 +959,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    state.name,
+                    distZone.district,
                     style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -959,13 +968,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ],
             ),
             const SizedBox(height: 16),
-            _zoneInfoRow('Total Crimes', '${state.totalCrime}'),
-            _zoneInfoRow('Districts', '${state.districtCount}'),
-            _zoneInfoRow(
-                'Avg Crime/District', state.avgPerDistrict.toStringAsFixed(1)),
+            _zoneInfoRow('State', distZone.state),
+            _zoneInfoRow('Crime Rate Limit', distZone.crimeRate.toStringAsFixed(0)),
             const SizedBox(height: 8),
             Text(
-              'Data: NCRB 2020 — Crime against Women',
+              'Data: NCRB Crime in India 2022 Book 1 (Extracted)',
               style: TextStyle(
                 color: Colors.grey.shade600,
                 fontSize: 12,
