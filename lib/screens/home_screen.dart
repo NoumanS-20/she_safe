@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -22,6 +23,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  static const double _defaultLatitude = 12.825331244496796;
+  static const double _defaultLongitude = 80.04569852394921;
+  static const String _defaultPlaceName = 'Chengalpattu';
+
   final CellTowerService _cellTowerService = CellTowerService();
   final TriangulationService _triangulationService = TriangulationService();
   final LocationService _locationService = LocationService();
@@ -36,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _mapNetworkAvailable = true;
   bool _showZones = true;
   String _statusMessage = 'Tap "Scan" to find your location';
-  DistrictZone? _currentZone;
+  CrimeZone? _currentZone;
 
   late AnimationController _pulseController;
   late AnimationController _scanController;
@@ -51,6 +56,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Color(0xFF8E24AA),
     Color(0xFF00ACC1),
   ];
+  static final NumberFormat _crimeCountFormatter =
+      NumberFormat.decimalPattern();
 
   @override
   void initState() {
@@ -66,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 800),
     );
 
+    _setDefaultLocationState();
     _requestPermissions();
     _checkMapNetwork();
     _loadZoneData();
@@ -91,8 +99,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Future<void> _checkMapNetwork() async {
     final connectivityResults = await Connectivity().checkConnectivity();
-    final hasNetwork =
-      connectivityResults.any((c) => c != ConnectivityResult.none);
+    final hasNetwork = connectivityResults.any(
+      (c) => c != ConnectivityResult.none,
+    );
 
     if (!mounted) return;
     setState(() {
@@ -103,8 +112,45 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Future<void> _loadZoneData() async {
     await _zoneService.loadZoneData();
     if (mounted && _zoneService.zoneData != null) {
-      setState(() {});
+      setState(() {
+        if (_triangulationResult?.method == 'default_location') {
+          _currentZone = _buildDefaultZone();
+          _statusMessage =
+              'Default Location: $_defaultPlaceName'
+              '${_currentZone != null ? '\nZone: ${_currentZone!.zone.toUpperCase()} - ${_currentZone!.name}' : ''}';
+        }
+      });
     }
+  }
+
+  void _setDefaultLocationState() {
+    _triangulationResult = TriangulationResult(
+      latitude: _defaultLatitude,
+      longitude: _defaultLongitude,
+      accuracyMeters: 100.0,
+      towerCount: 0,
+      method: 'default_location',
+    );
+    _statusMessage = 'Default Location: $_defaultPlaceName';
+  }
+
+  CrimeZone? _buildDefaultZone() {
+    final nearestZone = _zoneService.getZoneForLocation(
+      _defaultLatitude,
+      _defaultLongitude,
+    );
+    if (nearestZone == null) return null;
+
+    return CrimeZone(
+      name: _defaultPlaceName,
+      totalCrime: nearestZone.totalCrime,
+      districtCount: nearestZone.districtCount,
+      avgPerDistrict: nearestZone.avgPerDistrict,
+      zone: nearestZone.zone,
+      latitude: _defaultLatitude,
+      longitude: _defaultLongitude,
+      radiusMeters: nearestZone.radiusMeters,
+    );
   }
 
   Future<void> _scanTowers() async {
@@ -144,35 +190,42 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         _isLoading = false;
 
         // Use actual triangulation result if available, otherwise custom override
-        _triangulationResult = bestResult ?? TriangulationResult(
-          latitude: 12.825331244496796,
-          longitude: 80.04569852394921,
-          accuracyMeters: 100.0,
-          towerCount: towers.length,
-          method: 'default_location',
-        );
+        _triangulationResult =
+            bestResult ??
+            TriangulationResult(
+              latitude: _defaultLatitude,
+              longitude: _defaultLongitude,
+              accuracyMeters: 100.0,
+              towerCount: towers.length,
+              method: 'default_location',
+            );
 
-        _currentZone = _zoneService.getZoneForLocation(
-          _triangulationResult!.latitude,
-          _triangulationResult!.longitude,
-        );
+        _currentZone = bestResult == null
+            ? _buildDefaultZone()
+            : _zoneService.getZoneForLocation(
+                _triangulationResult!.latitude,
+                _triangulationResult!.longitude,
+              );
 
         _statusMessage = bestResult != null
             ? 'Location estimated from ${bestResult.towerCount} towers'
-            : 'Default Location';
+            : 'Default Location: $_defaultPlaceName';
         if (towers.isNotEmpty && bestResult == null) {
           _statusMessage += '\n${towers.length} cell towers detected nearby';
         }
         if (_currentZone != null) {
           _statusMessage +=
-              '\nZone: ${_currentZone!.zone} — ${_currentZone!.district}';
+              '\nZone: ${_currentZone!.zone.toUpperCase()} - ${_currentZone!.name}';
         }
       });
 
       // Pan map to the estimated position
       if (_triangulationResult != null) {
         _mapController.move(
-          LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude),
+          LatLng(
+            _triangulationResult!.latitude,
+            _triangulationResult!.longitude,
+          ),
           15.0,
         );
       }
@@ -240,16 +293,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               heroTag: 'center_location',
               onPressed: () {
                 _mapController.move(
-                  LatLng(_triangulationResult!.latitude,
-                      _triangulationResult!.longitude),
+                  LatLng(
+                    _triangulationResult!.latitude,
+                    _triangulationResult!.longitude,
+                  ),
                   15.0,
                 );
               },
               backgroundColor: Colors.deepPurple,
-              child: const Icon(
-                Icons.my_location,
-                color: Colors.white,
-              ),
+              child: const Icon(Icons.my_location, color: Colors.white),
             ),
           if (_triangulationResult != null) const SizedBox(height: 8),
           // Auto-refresh toggle
@@ -333,10 +385,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           // Toggle map / visualization view
           SegmentedButton<bool>(
             segments: const [
-              ButtonSegment<bool>(
-                value: true,
-                icon: Icon(Icons.map, size: 18),
-              ),
+              ButtonSegment<bool>(value: true, icon: Icon(Icons.map, size: 18)),
               ButtonSegment<bool>(
                 value: false,
                 icon: Icon(Icons.radar, size: 18),
@@ -352,7 +401,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
           const SizedBox(width: 8),
-          // Toggle zones layer
           IconButton(
             onPressed: () => setState(() => _showZones = !_showZones),
             icon: Icon(
@@ -362,9 +410,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             tooltip: _showZones ? 'Hide crime zones' : 'Show crime zones',
             style: IconButton.styleFrom(
               backgroundColor: _showZones
-                  ? Colors.red.shade100
+                  ? Colors.red.shade50
                   : theme.colorScheme.surfaceContainerHighest,
-              foregroundColor: _showZones ? Colors.red : Colors.grey,
+              foregroundColor: _showZones ? Colors.red.shade700 : Colors.grey,
             ),
           ),
         ],
@@ -380,10 +428,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return GestureDetector(
       onTap: () {
         if (_showMap) {
-          _mapController.move(
-            LatLng(r.latitude, r.longitude),
-            15.0,
-          );
+          _mapController.move(LatLng(r.latitude, r.longitude), 15.0);
         }
       },
       child: Container(
@@ -391,10 +436,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Colors.deepPurple.shade600,
-              Colors.deepPurple.shade400,
-            ],
+            colors: [Colors.deepPurple.shade600, Colors.deepPurple.shade400],
           ),
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
@@ -456,7 +498,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: _getAccuracyColor(r.accuracyLevel).withValues(alpha: 0.9),
+                color: _getAccuracyColor(
+                  r.accuracyLevel,
+                ).withValues(alpha: 0.9),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -471,13 +515,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             if (_currentZone != null) ...[
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: _currentZone!.zone.toUpperCase() == 'RED'
                       ? Colors.red.shade600
                       : _currentZone!.zone.toUpperCase() == 'YELLOW'
-                          ? Colors.amber.shade600
-                          : Colors.green.shade600,
+                      ? Colors.amber.shade600
+                      : Colors.green.shade600,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -517,8 +564,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             _isLoading
                 ? Icons.radar
                 : _triangulationResult != null
-                    ? Icons.check_circle_outline
-                    : Icons.info_outline,
+                ? Icons.check_circle_outline
+                : Icons.info_outline,
             size: 20,
             color: _triangulationResult != null
                 ? Colors.green.shade700
@@ -542,15 +589,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
                 color: _getAccuracyColor(
-                        _triangulationResult!.accuracyLevel)
-                    .withValues(alpha: 0.15),
+                  _triangulationResult!.accuracyLevel,
+                ).withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
                 _triangulationResult!.accuracyLevel,
                 style: theme.textTheme.labelSmall?.copyWith(
-                  color: _getAccuracyColor(
-                      _triangulationResult!.accuracyLevel),
+                  color: _getAccuracyColor(_triangulationResult!.accuracyLevel),
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -593,10 +639,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 const SizedBox(height: 4),
                 Text(
                   'Connect your phone to Wi-Fi or mobile data, then tap Retry.',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey.shade700,
-                  ),
+                  style: TextStyle(fontSize: 13, color: Colors.grey.shade700),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),
@@ -613,8 +656,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
 
     final center = _triangulationResult != null
-        ? LatLng(_triangulationResult!.latitude, _triangulationResult!.longitude)
-        : const LatLng(12.825331244496796, 80.04569852394921);
+        ? LatLng(
+            _triangulationResult!.latitude,
+            _triangulationResult!.longitude,
+          )
+        : const LatLng(_defaultLatitude, _defaultLongitude);
 
     return ClipRRect(
       borderRadius: const BorderRadius.only(
@@ -623,37 +669,31 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       ),
       child: FlutterMap(
         mapController: _mapController,
-        options: MapOptions(
-          initialCenter: center,
-          initialZoom: 14.0,
-        ),
+        options: MapOptions(initialCenter: center, initialZoom: 14.0),
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            maxZoom: 19,
             userAgentPackageName: 'com.example.she_safe',
           ),
+          if (_showZones && _zoneService.zoneData != null)
+            CircleLayer(circles: _buildZoneCircles()),
+          if (_showZones &&
+              _currentZone != null &&
+              _triangulationResult != null)
+            CircleLayer(circles: _buildCurrentZoneCircles()),
           // Signal radius circles
-          CircleLayer(
-            circles: _buildMapCircles(),
-          ),
-          // Crime zone overlay circles
-          if (_showZones && _zoneService.zoneData != null)
-            CircleLayer(
-              circles: _buildZoneCircles(),
-            ),
-          // Crime zone labels
-          if (_showZones && _zoneService.zoneData != null)
-            MarkerLayer(
-              markers: _buildZoneMarkers(),
-            ),
+          CircleLayer(circles: _buildMapCircles()),
           // Lines from towers to estimated position
-          PolylineLayer(
-            polylines: _buildMapLines(),
-          ),
+          PolylineLayer(polylines: _buildMapLines()),
+          if (_showZones && _zoneService.zoneData != null)
+            MarkerLayer(markers: _buildZoneMarkers()),
+          if (_showZones &&
+              _currentZone != null &&
+              _triangulationResult != null)
+            MarkerLayer(markers: _buildCurrentZoneMarkers()),
           // Markers
-          MarkerLayer(
-            markers: _buildMapMarkers(),
-          ),
+          MarkerLayer(markers: _buildMapMarkers()),
         ],
       ),
     );
@@ -661,58 +701,171 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   List<CircleMarker> _buildMapCircles() {
     final circles = <CircleMarker>[];
-    final towersWithLoc =
-        _towers.where((t) => t.latitude != null && t.longitude != null).toList();
+    final towersWithLoc = _towers
+        .where((t) => t.latitude != null && t.longitude != null)
+        .toList();
 
     for (int i = 0; i < towersWithLoc.length; i++) {
       final tower = towersWithLoc[i];
       final color = towerColors[i % towerColors.length];
 
-      circles.add(CircleMarker(
-        point: LatLng(tower.latitude!, tower.longitude!),
-        radius: tower.estimateDistance(),
-        useRadiusInMeter: true,
-        color: color.withValues(alpha: 0.08),
-        borderColor: color.withValues(alpha: 0.3),
-        borderStrokeWidth: 1.5,
-      ));
+      circles.add(
+        CircleMarker(
+          point: LatLng(tower.latitude!, tower.longitude!),
+          radius: tower.estimateDistance(),
+          useRadiusInMeter: true,
+          color: color.withValues(alpha: 0.045),
+          borderColor: color.withValues(alpha: 0.2),
+          borderStrokeWidth: 1.2,
+        ),
+      );
     }
 
     // Accuracy circle for the estimated position
     if (_triangulationResult != null) {
-      circles.add(CircleMarker(
-        point: LatLng(
-            _triangulationResult!.latitude, _triangulationResult!.longitude),
-        radius: _triangulationResult!.accuracyMeters,
-        useRadiusInMeter: true,
-        color: Colors.deepPurple.withValues(alpha: 0.08),
-        borderColor: Colors.deepPurple.withValues(alpha: 0.5),
-        borderStrokeWidth: 2,
-      ));
+      circles.add(
+        CircleMarker(
+          point: LatLng(
+            _triangulationResult!.latitude,
+            _triangulationResult!.longitude,
+          ),
+          radius: _triangulationResult!.accuracyMeters,
+          useRadiusInMeter: true,
+          color: Colors.deepPurple.withValues(alpha: 0.05),
+          borderColor: Colors.deepPurple.withValues(alpha: 0.25),
+          borderStrokeWidth: 1.4,
+        ),
+      );
     }
 
     return circles;
   }
 
-  List<CircleMarker> _buildZoneCircles() {
-    final zoneColorMap = {
-      'red': Colors.red,
-      'yellow': Colors.amber,
-      'green': Colors.green,
-      'RED': Colors.red,
-      'YELLOW': Colors.amber,
-      'GREEN': Colors.green,
+  MaterialColor _zoneColorFor(String zone) {
+    return switch (zone.toUpperCase()) {
+      'RED' => Colors.red,
+      'YELLOW' => Colors.amber,
+      _ => Colors.green,
     };
+  }
 
-    return _zoneService.zoneData!.districts.map((distZone) {
-      final color = zoneColorMap[distZone.zone] ?? Colors.grey;
-      return CircleMarker(
-        point: LatLng(distZone.latitude, distZone.longitude),
-        radius: 30000, // ~30km radius circles for districts
+  double _currentZoneRadiusMeters(CrimeZone zone) {
+    return switch (zone.zone.toUpperCase()) {
+      'RED' => 3200,
+      'YELLOW' => 2200,
+      _ => 1400,
+    };
+  }
+
+  List<CircleMarker> _buildCurrentZoneCircles() {
+    final zone = _currentZone;
+    final position = _triangulationResult;
+    if (zone == null || position == null) return [];
+
+    final color = _zoneColorFor(zone.zone);
+    final center = LatLng(position.latitude, position.longitude);
+    final radius = _currentZoneRadiusMeters(zone);
+
+    return [
+      CircleMarker(
+        point: center,
+        radius: radius,
         useRadiusInMeter: true,
-        color: color.withValues(alpha: 0.12),
-        borderColor: color.withValues(alpha: 0.5),
-        borderStrokeWidth: 1.5,
+        color: color.withValues(alpha: 0.07),
+        borderColor: color.withValues(alpha: 0.65),
+        borderStrokeWidth: 2,
+      ),
+      CircleMarker(
+        point: center,
+        radius: radius * 0.42,
+        useRadiusInMeter: true,
+        color: color.withValues(alpha: 0.1),
+        borderColor: color.withValues(alpha: 0.18),
+        borderStrokeWidth: 0,
+      ),
+    ];
+  }
+
+  List<Marker> _buildCurrentZoneMarkers() {
+    final zone = _currentZone;
+    final position = _triangulationResult;
+    if (zone == null || position == null) return [];
+
+    final color = _zoneColorFor(zone.zone).shade700;
+
+    return [
+      Marker(
+        point: LatLng(position.latitude, position.longitude),
+        width: 200,
+        height: 120,
+        alignment: Alignment.topCenter,
+        child: IgnorePointer(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 62),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  constraints: const BoxConstraints(maxWidth: 180),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.35),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    zone.name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                Container(
+                  width: 2,
+                  height: 18,
+                  color: color.withValues(alpha: 0.7),
+                ),
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: color,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ];
+  }
+
+  List<CircleMarker> _buildZoneCircles() {
+    return _zoneService.zoneData!.states.map((stateZone) {
+      final color = _zoneColorFor(stateZone.zone);
+      return CircleMarker(
+        point: LatLng(stateZone.latitude, stateZone.longitude),
+        radius: stateZone.radiusMeters,
+        useRadiusInMeter: true,
+        color: color.withValues(alpha: 0.08),
+        borderColor: color.withValues(alpha: 0.32),
+        borderStrokeWidth: 1.2,
       );
     }).toList();
   }
@@ -721,24 +874,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (_triangulationResult == null) return [];
 
     final lines = <Polyline>[];
-    final towersWithLoc =
-        _towers.where((t) => t.latitude != null && t.longitude != null).toList();
+    final towersWithLoc = _towers
+        .where((t) => t.latitude != null && t.longitude != null)
+        .toList();
     final estPoint = LatLng(
-        _triangulationResult!.latitude, _triangulationResult!.longitude);
+      _triangulationResult!.latitude,
+      _triangulationResult!.longitude,
+    );
 
     for (int i = 0; i < towersWithLoc.length; i++) {
       final tower = towersWithLoc[i];
       final color = towerColors[i % towerColors.length];
 
-      lines.add(Polyline(
-        points: [
-          LatLng(tower.latitude!, tower.longitude!),
-          estPoint,
-        ],
-        color: color.withValues(alpha: 0.4),
-        strokeWidth: 1.5,
-        pattern: const StrokePattern.dotted(),
-      ));
+      lines.add(
+        Polyline(
+          points: [LatLng(tower.latitude!, tower.longitude!), estPoint],
+          color: color.withValues(alpha: 0.4),
+          strokeWidth: 1.5,
+          pattern: const StrokePattern.dotted(),
+        ),
+      );
     }
 
     return lines;
@@ -746,125 +901,124 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   List<Marker> _buildMapMarkers() {
     final markers = <Marker>[];
-    final towersWithLoc =
-        _towers.where((t) => t.latitude != null && t.longitude != null).toList();
+    final towersWithLoc = _towers
+        .where((t) => t.latitude != null && t.longitude != null)
+        .toList();
 
     // Tower markers
     for (int i = 0; i < towersWithLoc.length; i++) {
       final tower = towersWithLoc[i];
       final color = towerColors[i % towerColors.length];
 
-      markers.add(Marker(
-        point: LatLng(tower.latitude!, tower.longitude!),
-        width: 40,
-        height: 40,
-        child: _TowerMapMarker(
-          index: i + 1,
-          color: color,
-          networkType: tower.networkType,
+      markers.add(
+        Marker(
+          point: LatLng(tower.latitude!, tower.longitude!),
+          width: 40,
+          height: 40,
+          child: _TowerMapMarker(
+            index: i + 1,
+            color: color,
+            networkType: tower.networkType,
+          ),
         ),
-      ));
+      );
     }
 
     // YOUR LOCATION marker — the main result
     if (_triangulationResult != null) {
-      markers.add(Marker(
-        point: LatLng(
-            _triangulationResult!.latitude, _triangulationResult!.longitude),
-        width: 120,
-        height: 80,
-        child: AnimatedBuilder(
-          animation: _pulseController,
-          builder: (context, child) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // "You are here" label
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 3),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.deepPurple.withValues(alpha: 0.4),
-                        blurRadius: 6,
-                      ),
-                    ],
-                  ),
-                  child: const Text(
-                    'You are here',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
+      markers.add(
+        Marker(
+          point: LatLng(
+            _triangulationResult!.latitude,
+            _triangulationResult!.longitude,
+          ),
+          width: 120,
+          height: 80,
+          child: AnimatedBuilder(
+            animation: _pulseController,
+            builder: (context, child) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // "You are here" label
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 3,
                     ),
-                  ),
-                ),
-                const SizedBox(height: 2),
-                // Pulsing location dot
-                Container(
-                  width: 36 + 8 * _pulseController.value,
-                  height: 36 + 8 * _pulseController.value,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.deepPurple.withValues(
-                        alpha: 0.12 + 0.08 * _pulseController.value),
-                  ),
-                  child: Center(
-                    child: Container(
-                      width: 22,
-                      height: 22,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.deepPurple,
-                        border:
-                            Border.all(color: Colors.white, width: 3),
-                        boxShadow: [
-                          BoxShadow(
-                            color:
-                                Colors.deepPurple.withValues(alpha: 0.5),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: const Icon(
-                        Icons.my_location,
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.deepPurple.withValues(alpha: 0.4),
+                          blurRadius: 6,
+                        ),
+                      ],
+                    ),
+                    child: const Text(
+                      'You are here',
+                      style: TextStyle(
                         color: Colors.white,
-                        size: 13,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ),
-              ],
-            );
-          },
+                  const SizedBox(height: 2),
+                  // Pulsing location dot
+                  Container(
+                    width: 36 + 8 * _pulseController.value,
+                    height: 36 + 8 * _pulseController.value,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.deepPurple.withValues(
+                        alpha: 0.12 + 0.08 * _pulseController.value,
+                      ),
+                    ),
+                    child: Center(
+                      child: Container(
+                        width: 22,
+                        height: 22,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.deepPurple,
+                          border: Border.all(color: Colors.white, width: 3),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.deepPurple.withValues(alpha: 0.5),
+                              blurRadius: 10,
+                            ),
+                          ],
+                        ),
+                        child: const Icon(
+                          Icons.my_location,
+                          color: Colors.white,
+                          size: 13,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
         ),
-      ));
+      );
     }
 
     return markers;
   }
 
   List<Marker> _buildZoneMarkers() {
-    final zoneColorMap = {
-      'RED': Colors.red.shade700,
-      'YELLOW': Colors.amber.shade700,
-      'GREEN': Colors.green.shade700,
-      'red': Colors.red.shade700,
-      'yellow': Colors.amber.shade700,
-      'green': Colors.green.shade700,
-    };
-
-    return _zoneService.zoneData!.districts.map((distZone) {
-      final color = zoneColorMap[distZone.zone] ?? Colors.grey;
+    return _zoneService.zoneData!.states.map((stateZone) {
+      final color = _zoneColorFor(stateZone.zone).shade700;
       return Marker(
-        point: LatLng(distZone.latitude, distZone.longitude),
-        width: 140,
+        point: LatLng(stateZone.latitude, stateZone.longitude),
+        width: 160,
         height: 50,
         child: GestureDetector(
-          onTap: () => _showZoneInfo(distZone),
+          onTap: () => _showZoneInfo(stateZone),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -874,11 +1028,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   color: color,
                   borderRadius: BorderRadius.circular(6),
                   boxShadow: [
-                    BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 4),
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.4),
+                      blurRadius: 4,
+                    ),
                   ],
                 ),
                 child: Text(
-                  distZone.district,
+                  stateZone.name,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
@@ -904,16 +1061,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }).toList();
   }
 
-  void _showZoneInfo(DistrictZone distZone) {
-    final colorMap = {
-      'RED': Colors.red,
-      'YELLOW': Colors.amber,
-      'GREEN': Colors.green,
-      'red': Colors.red,
-      'yellow': Colors.amber,
-      'green': Colors.green,
-    };
-    final color = colorMap[distZone.zone] ?? Colors.grey;
+  void _showZoneInfo(CrimeZone stateZone) {
+    final color = _zoneColorFor(stateZone.zone);
+    final thresholds = _zoneService.zoneData?.thresholds;
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -927,7 +1077,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           children: [
             Center(
               child: Container(
-                width: 40, height: 4,
+                width: 40,
+                height: 4,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(2),
@@ -938,17 +1089,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: color,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    distZone.zone.toUpperCase() == 'RED'
-                        ? 'HIGH RISK'
-                        : distZone.zone.toUpperCase() == 'YELLOW'
-                            ? 'MODERATE RISK'
-                            : 'LOW RISK',
+                    stateZone.riskLabel,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -959,24 +1109,42 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    distZone.district,
+                    stateZone.name,
                     style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            _zoneInfoRow('State', distZone.state),
-            _zoneInfoRow('Crime Rate Limit', distZone.crimeRate.toStringAsFixed(0)),
+            _zoneInfoRow('State/UT', stateZone.name),
+            _zoneInfoRow(
+              'Total recorded crimes',
+              _crimeCountFormatter.format(stateZone.totalCrime),
+            ),
+            _zoneInfoRow(
+              'District entries',
+              _crimeCountFormatter.format(stateZone.districtCount),
+            ),
+            _zoneInfoRow(
+              'Average per district',
+              stateZone.avgPerDistrict.toStringAsFixed(1),
+            ),
+            if (thresholds != null)
+              _zoneInfoRow(
+                'Red band starts at',
+                _crimeCountFormatter.format(thresholds.redMinTotalCrime),
+              ),
             const SizedBox(height: 8),
             Text(
-              'Data: NCRB Crime in India 2022 Book 1 (Extracted)',
-              style: TextStyle(
-                color: Colors.grey.shade600,
-                fontSize: 12,
-              ),
+              'Data: ${_zoneService.zoneData?.source ?? 'CSV'}',
+              style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              _zoneService.zoneData?.classificationBasis ?? '',
+              style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
             ),
           ],
         ),
@@ -990,8 +1158,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: TextStyle(color: Colors.grey.shade600, fontSize: 14)),
-          Text(value, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
+          Text(
+            label,
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
+          ),
+          Text(
+            value,
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+          ),
         ],
       ),
     );
@@ -1010,26 +1184,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.radar,
-                    size: 64,
-                    color: Colors.grey.shade300,
-                  ),
+                  Icon(Icons.radar, size: 64, color: Colors.grey.shade300),
                   const SizedBox(height: 12),
                   Text(
                     'No tower data yet',
-                    style: TextStyle(
-                      color: Colors.grey.shade500,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.grey.shade500, fontSize: 16),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     'Tap "Scan Towers" to begin',
-                    style: TextStyle(
-                      color: Colors.grey.shade400,
-                      fontSize: 13,
-                    ),
+                    style: TextStyle(color: Colors.grey.shade400, fontSize: 13),
                   ),
                 ],
               ),
@@ -1071,8 +1235,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
               const SizedBox(width: 8),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
                   color: theme.colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(10),
@@ -1162,9 +1325,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               const SizedBox(height: 16),
               Text(
                 'Your Location Details',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16),
               _detailRow('Your Latitude', r.latitude.toStringAsFixed(6)),
@@ -1173,7 +1336,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               _detailRow('Accuracy Level', r.accuracyLevel),
               _detailRow('Method', r.method.replaceAll('_', ' ').toUpperCase()),
               _detailRow('Towers Used', '${r.towerCount}'),
-              _detailRow('Last Updated', r.timestamp.toString().substring(0, 19)),
+              _detailRow(
+                'Last Updated',
+                r.timestamp.toString().substring(0, 19),
+              ),
               const SizedBox(height: 12),
             ],
           ),
@@ -1190,17 +1356,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         children: [
           Text(
             label,
-            style: TextStyle(
-              color: Colors.grey.shade600,
-              fontSize: 13,
-            ),
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
           ),
           Text(
             value,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 13,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
           ),
         ],
       ),
@@ -1242,18 +1402,11 @@ class _TowerMapMarker extends StatelessWidget {
             shape: BoxShape.circle,
             border: Border.all(color: Colors.white, width: 2),
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.4),
-                blurRadius: 6,
-              ),
+              BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 6),
             ],
           ),
           child: Center(
-            child: Icon(
-              Icons.cell_tower,
-              color: Colors.white,
-              size: 16,
-            ),
+            child: Icon(Icons.cell_tower, color: Colors.white, size: 16),
           ),
         ),
       ],

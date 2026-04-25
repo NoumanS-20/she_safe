@@ -1,258 +1,376 @@
 {
-  "version": "2020",
-  "source": "NCRB",
+  "version": "2026-04-23",
+  "source": "crimes_against_women_combined (1).csv",
+  "metric": "Crimes Against Women",
+  "classificationBasis": "Total crimes per state aggregated from district rows in the CSV",
+  "thresholds": {
+    "yellowMinTotalCrime": 1202,
+    "redMinTotalCrime": 23505,
+    "radiusMeters": {
+      "min": 70000,
+      "max": 190000
+    }
+  },
   "states": [
     {
-      "name": "Nagaland",
-      "totalCrime": 39,
-      "districtCount": 11,
-      "avgPerDistrict": 3.5,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Ladakh",
-      "totalCrime": 9,
-      "districtCount": 2,
-      "avgPerDistrict": 4.5,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Arunachal Pradesh",
-      "totalCrime": 281,
-      "districtCount": 27,
-      "avgPerDistrict": 10.4,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Mizoram",
-      "totalCrime": 172,
-      "districtCount": 13,
-      "avgPerDistrict": 13.2,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Manipur",
-      "totalCrime": 247,
-      "districtCount": 18,
-      "avgPerDistrict": 13.7,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Lakshadweep",
-      "totalCrime": 15,
-      "districtCount": 1,
-      "avgPerDistrict": 15.0,
-      "zone": "GREEN"
-    },
-    {
-      "name": "D&N Haveli and Daman & Diu",
-      "totalCrime": 61,
-      "districtCount": 3,
-      "avgPerDistrict": 20.3,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Sikkim",
-      "totalCrime": 140,
-      "districtCount": 4,
-      "avgPerDistrict": 35.0,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Meghalaya",
-      "totalCrime": 568,
-      "districtCount": 12,
-      "avgPerDistrict": 47.3,
-      "zone": "GREEN"
-    },
-    {
       "name": "A&N Islands",
-      "totalCrime": 143,
-      "districtCount": 3,
-      "avgPerDistrict": 47.7,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Puducherry",
-      "totalCrime": 113,
-      "districtCount": 2,
-      "avgPerDistrict": 56.5,
-      "zone": "GREEN"
-    },
-    {
-      "name": "Goa",
-      "totalCrime": 219,
-      "districtCount": 3,
-      "avgPerDistrict": 73.0,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Tripura",
-      "totalCrime": 874,
-      "districtCount": 9,
-      "avgPerDistrict": 97.1,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Himachal Pradesh",
-      "totalCrime": 1614,
-      "districtCount": 16,
-      "avgPerDistrict": 100.9,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Jammu & Kashmir",
-      "totalCrime": 3405,
-      "districtCount": 28,
-      "avgPerDistrict": 121.6,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Tamil Nadu",
-      "totalCrime": 6630,
-      "districtCount": 47,
-      "avgPerDistrict": 141.1,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Punjab",
-      "totalCrime": 4838,
-      "districtCount": 32,
-      "avgPerDistrict": 151.2,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Gujarat",
-      "totalCrime": 8028,
-      "districtCount": 50,
-      "avgPerDistrict": 160.6,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Uttarakhand",
-      "totalCrime": 2846,
-      "districtCount": 14,
-      "avgPerDistrict": 203.3,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Chhattisgarh",
-      "totalCrime": 7385,
-      "districtCount": 29,
-      "avgPerDistrict": 254.7,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Jharkhand",
-      "totalCrime": 7630,
-      "districtCount": 26,
-      "avgPerDistrict": 293.5,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Chandigarh",
       "totalCrime": 301,
-      "districtCount": 1,
-      "avgPerDistrict": 301.0,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Bihar",
-      "totalCrime": 15359,
-      "districtCount": 46,
-      "avgPerDistrict": 333.9,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Karnataka",
-      "totalCrime": 12680,
-      "districtCount": 37,
-      "avgPerDistrict": 342.7,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Delhi",
-      "totalCrime": 10093,
-      "districtCount": 23,
-      "avgPerDistrict": 438.8,
-      "zone": "YELLOW"
-    },
-    {
-      "name": "Madhya Pradesh",
-      "totalCrime": 25640,
-      "districtCount": 56,
-      "avgPerDistrict": 457.9,
-      "zone": "RED"
-    },
-    {
-      "name": "Kerala",
-      "totalCrime": 10139,
-      "districtCount": 21,
-      "avgPerDistrict": 482.8,
-      "zone": "RED"
-    },
-    {
-      "name": "Haryana",
-      "totalCrime": 13000,
-      "districtCount": 25,
-      "avgPerDistrict": 520.0,
-      "zone": "RED"
-    },
-    {
-      "name": "Telangana",
-      "totalCrime": 17791,
-      "districtCount": 30,
-      "avgPerDistrict": 593.0,
-      "zone": "RED"
-    },
-    {
-      "name": "Uttar Pradesh",
-      "totalCrime": 49385,
-      "districtCount": 77,
-      "avgPerDistrict": 641.4,
-      "zone": "RED"
-    },
-    {
-      "name": "Maharashtra",
-      "totalCrime": 31954,
-      "districtCount": 49,
-      "avgPerDistrict": 652.1,
-      "zone": "RED"
-    },
-    {
-      "name": "Assam",
-      "totalCrime": 26352,
-      "districtCount": 40,
-      "avgPerDistrict": 658.8,
-      "zone": "RED"
-    },
-    {
-      "name": "Odisha",
-      "totalCrime": 25489,
-      "districtCount": 37,
-      "avgPerDistrict": 688.9,
-      "zone": "RED"
-    },
-    {
-      "name": "Rajasthan",
-      "totalCrime": 34535,
-      "districtCount": 48,
-      "avgPerDistrict": 719.5,
-      "zone": "RED"
+      "districtCount": 6,
+      "avgPerDistrict": 50.2,
+      "zone": "GREEN",
+      "lat": 11.7401,
+      "lng": 92.6586,
+      "radiusMeters": 70452
     },
     {
       "name": "Andhra Pradesh",
-      "totalCrime": 17089,
+      "totalCrime": 51482,
+      "districtCount": 53,
+      "avgPerDistrict": 971.4,
+      "zone": "RED",
+      "lat": 15.9129,
+      "lng": 79.74,
+      "radiusMeters": 149930
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "totalCrime": 833,
+      "districtCount": 37,
+      "avgPerDistrict": 22.5,
+      "zone": "GREEN",
+      "lat": 28.218,
+      "lng": 94.7278,
+      "radiusMeters": 71278
+    },
+    {
+      "name": "Assam",
+      "totalCrime": 39240,
+      "districtCount": 61,
+      "avgPerDistrict": 643.3,
+      "zone": "RED",
+      "lat": 26.2006,
+      "lng": 92.9376,
+      "radiusMeters": 130919
+    },
+    {
+      "name": "Bihar",
+      "totalCrime": 22767,
+      "districtCount": 90,
+      "avgPerDistrict": 253.0,
+      "zone": "YELLOW",
+      "lat": 25.0961,
+      "lng": 85.3131,
+      "radiusMeters": 105339
+    },
+    {
+      "name": "Chandigarh",
+      "totalCrime": 980,
+      "districtCount": 2,
+      "avgPerDistrict": 490.0,
+      "zone": "GREEN",
+      "lat": 30.7333,
+      "lng": 76.7794,
+      "radiusMeters": 71506
+    },
+    {
+      "name": "Chhattisgarh",
+      "totalCrime": 16705,
+      "districtCount": 56,
+      "avgPerDistrict": 298.3,
+      "zone": "YELLOW",
+      "lat": 21.2787,
+      "lng": 81.8661,
+      "radiusMeters": 95925
+    },
+    {
+      "name": "D&N Haveli",
+      "totalCrime": 45,
+      "districtCount": 2,
+      "avgPerDistrict": 22.5,
+      "zone": "GREEN",
+      "lat": 20.2736,
+      "lng": 73.0087,
+      "radiusMeters": 70054
+    },
+    {
+      "name": "Daman & Diu",
+      "totalCrime": 31,
+      "districtCount": 4,
+      "avgPerDistrict": 7.8,
+      "zone": "GREEN",
+      "lat": 20.4283,
+      "lng": 72.8397,
+      "radiusMeters": 70033
+    },
+    {
+      "name": "Delhi UT",
+      "totalCrime": 32207,
+      "districtCount": 37,
+      "avgPerDistrict": 870.5,
+      "zone": "RED",
+      "lat": 28.7041,
+      "lng": 77.1025,
+      "radiusMeters": 119998
+    },
+    {
+      "name": "Goa",
+      "totalCrime": 1202,
+      "districtCount": 5,
+      "avgPerDistrict": 240.4,
+      "zone": "YELLOW",
+      "lat": 15.2993,
+      "lng": 74.124,
+      "radiusMeters": 71851
+    },
+    {
+      "name": "Gujarat",
+      "totalCrime": 23505,
+      "districtCount": 75,
+      "avgPerDistrict": 313.4,
+      "zone": "RED",
+      "lat": 22.2587,
+      "lng": 71.1924,
+      "radiusMeters": 106485
+    },
+    {
+      "name": "Haryana",
+      "totalCrime": 19715,
+      "districtCount": 48,
+      "avgPerDistrict": 410.7,
+      "zone": "YELLOW",
+      "lat": 29.0588,
+      "lng": 76.0856,
+      "radiusMeters": 100599
+    },
+    {
+      "name": "Himachal Pradesh",
+      "totalCrime": 3772,
+      "districtCount": 30,
+      "avgPerDistrict": 125.7,
+      "zone": "YELLOW",
+      "lat": 31.1048,
+      "lng": 77.1734,
+      "radiusMeters": 75842
+    },
+    {
+      "name": "Jammu & Kashmir",
+      "totalCrime": 7948,
+      "districtCount": 60,
+      "avgPerDistrict": 132.5,
+      "zone": "YELLOW",
+      "lat": 33.7782,
+      "lng": 76.5762,
+      "radiusMeters": 82327
+    },
+    {
+      "name": "Jharkhand",
+      "totalCrime": 11225,
+      "districtCount": 52,
+      "avgPerDistrict": 215.9,
+      "zone": "YELLOW",
+      "lat": 23.6102,
+      "lng": 85.2799,
+      "radiusMeters": 87415
+    },
+    {
+      "name": "Karnataka",
+      "totalCrime": 27880,
+      "districtCount": 71,
+      "avgPerDistrict": 392.7,
+      "zone": "RED",
+      "lat": 15.3173,
+      "lng": 75.7139,
+      "radiusMeters": 113279
+    },
+    {
+      "name": "Kerala",
+      "totalCrime": 28645,
+      "districtCount": 41,
+      "avgPerDistrict": 698.7,
+      "zone": "RED",
+      "lat": 10.8505,
+      "lng": 76.2711,
+      "radiusMeters": 114467
+    },
+    {
+      "name": "Lakshadweep",
+      "totalCrime": 10,
+      "districtCount": 2,
+      "avgPerDistrict": 5.0,
+      "zone": "GREEN",
+      "lat": 10.5667,
+      "lng": 72.6417,
+      "radiusMeters": 70000
+    },
+    {
+      "name": "Madhya Pradesh",
+      "totalCrime": 64016,
+      "districtCount": 109,
+      "avgPerDistrict": 587.3,
+      "zone": "RED",
+      "lat": 22.9734,
+      "lng": 78.6569,
+      "radiusMeters": 169393
+    },
+    {
+      "name": "Maharashtra",
+      "totalCrime": 64251,
+      "districtCount": 91,
+      "avgPerDistrict": 706.1,
+      "zone": "RED",
+      "lat": 19.7515,
+      "lng": 75.7139,
+      "radiusMeters": 169758
+    },
+    {
+      "name": "Manipur",
+      "totalCrime": 748,
       "districtCount": 20,
-      "avgPerDistrict": 854.5,
-      "zone": "RED"
+      "avgPerDistrict": 37.4,
+      "zone": "GREEN",
+      "lat": 24.6637,
+      "lng": 93.9063,
+      "radiusMeters": 71146
+    },
+    {
+      "name": "Meghalaya",
+      "totalCrime": 1016,
+      "districtCount": 22,
+      "avgPerDistrict": 46.2,
+      "zone": "GREEN",
+      "lat": 25.467,
+      "lng": 91.3662,
+      "radiusMeters": 71562
+    },
+    {
+      "name": "Mizoram",
+      "totalCrime": 757,
+      "districtCount": 19,
+      "avgPerDistrict": 39.8,
+      "zone": "GREEN",
+      "lat": 23.1645,
+      "lng": 92.9376,
+      "radiusMeters": 71160
+    },
+    {
+      "name": "Nagaland",
+      "totalCrime": 193,
+      "districtCount": 22,
+      "avgPerDistrict": 8.8,
+      "zone": "GREEN",
+      "lat": 26.1584,
+      "lng": 94.5624,
+      "radiusMeters": 70284
+    },
+    {
+      "name": "Odisha",
+      "totalCrime": 32029,
+      "districtCount": 72,
+      "avgPerDistrict": 444.8,
+      "zone": "RED",
+      "lat": 20.9517,
+      "lng": 85.0985,
+      "radiusMeters": 119722
+    },
+    {
+      "name": "Puducherry",
+      "totalCrime": 172,
+      "districtCount": 4,
+      "avgPerDistrict": 43.0,
+      "zone": "GREEN",
+      "lat": 11.9416,
+      "lng": 79.8083,
+      "radiusMeters": 70252
+    },
+    {
+      "name": "Punjab",
+      "totalCrime": 11960,
+      "districtCount": 56,
+      "avgPerDistrict": 213.6,
+      "zone": "YELLOW",
+      "lat": 31.1471,
+      "lng": 75.3412,
+      "radiusMeters": 88557
+    },
+    {
+      "name": "Rajasthan",
+      "totalCrime": 67498,
+      "districtCount": 85,
+      "avgPerDistrict": 794.1,
+      "zone": "RED",
+      "lat": 27.0238,
+      "lng": 74.2179,
+      "radiusMeters": 174800
+    },
+    {
+      "name": "Sikkim",
+      "totalCrime": 320,
+      "districtCount": 9,
+      "avgPerDistrict": 35.6,
+      "zone": "GREEN",
+      "lat": 27.533,
+      "lng": 88.5122,
+      "radiusMeters": 70481
+    },
+    {
+      "name": "Tamil Nadu",
+      "totalCrime": 12559,
+      "districtCount": 81,
+      "avgPerDistrict": 155.0,
+      "zone": "YELLOW",
+      "lat": 11.1271,
+      "lng": 78.6569,
+      "radiusMeters": 89487
+    },
+    {
+      "name": "Telangana",
+      "totalCrime": 17071,
+      "districtCount": 13,
+      "avgPerDistrict": 1313.2,
+      "zone": "YELLOW",
+      "lat": 18.1124,
+      "lng": 79.0193,
+      "radiusMeters": 96494
+    },
+    {
+      "name": "Tripura",
+      "totalCrime": 3929,
+      "districtCount": 18,
+      "avgPerDistrict": 218.3,
+      "zone": "YELLOW",
+      "lat": 23.9408,
+      "lng": 91.9882,
+      "radiusMeters": 76086
+    },
+    {
+      "name": "Uttar Pradesh",
+      "totalCrime": 71128,
+      "districtCount": 152,
+      "avgPerDistrict": 467.9,
+      "zone": "RED",
+      "lat": 26.8467,
+      "lng": 80.9462,
+      "radiusMeters": 180437
+    },
+    {
+      "name": "Uttarakhand",
+      "totalCrime": 3566,
+      "districtCount": 26,
+      "avgPerDistrict": 137.2,
+      "zone": "YELLOW",
+      "lat": 30.0668,
+      "lng": 79.0193,
+      "radiusMeters": 75522
     },
     {
       "name": "West Bengal",
-      "totalCrime": 36439,
-      "districtCount": 39,
-      "avgPerDistrict": 934.3,
-      "zone": "RED"
+      "totalCrime": 77286,
+      "districtCount": 59,
+      "avgPerDistrict": 1309.9,
+      "zone": "RED",
+      "lat": 22.9868,
+      "lng": 87.855,
+      "radiusMeters": 190000
     }
   ]
 }
